@@ -113,6 +113,26 @@
       <a href="#songteksten">Songteksten</a>
   </nav>
   <main>
+    <section id="quotes" style="text-align: center; margin-bottom: 3rem;">
+      <h2>Inspiratie uit het Wilde Westen</h2>
+      <blockquote id="quote" style="font-style: italic; font-size: 1.2rem; color: #5c3b21; margin-top: 1rem;">
+        “Sometimes the road takes you home.”
+      </blockquote>
+    </section>
+    <script>
+      const quotes = [
+        "Sometimes the road takes you home.",
+        "A cowboy is a poet with dust on his boots.",
+        "Even the wildest horses come home.",
+        "Let the prairie wind carry your story.",
+        "Under every hat lies a story untold."
+      ];
+      let currentQuote = 0;
+      setInterval(() => {
+        currentQuote = (currentQuote + 1) % quotes.length;
+        document.getElementById("quote").textContent = quotes[currentQuote];
+      }, 5000);
+    </script>
     <section id="over">
       <h2>Over mij</h2>
       <p>Mijn naam is David van Coolwijk. Ik maak countrymuziek waarin verhaal, sfeer en emotie samenkomen. Alles wat je op deze site hoort, komt voort uit mijn liefde voor muziek en mijn drang om iets echts te vertellen. Elke tekst schrijf ik zelf, met zorg, vanuit herinnering, ervaring of verbeelding.</p>
