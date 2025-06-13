@@ -102,6 +102,19 @@
   </script>
 </head>
 <body>
+  <div id="intro-banner" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000 url('cowboy.png') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:1000; opacity:1; transition:opacity 2s ease;">
+    <h1 style="color:white; font-size:3rem; text-shadow:2px 2px 8px #000;">Welkom in mijn wereld van countrymuziek</h1>
+    <p style="color:#fddc9a; margin-top:1rem; font-style:italic;">“Let the prairie wind carry your story...”</p>
+  </div>
+  <script>
+    window.addEventListener("load", function() {
+      setTimeout(() => {
+        const intro = document.getElementById("intro-banner");
+        intro.style.opacity = 0;
+        setTimeout(() => intro.style.display = "none", 2000);
+      }, 2500);
+    });
+  </script>
   <header>
     <h1>David van Coolwijk</h1>
     <h2>“Muziek is geen doel — het is een reis.”</h2>
