@@ -84,6 +84,22 @@
       text-decoration: none;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const text = "Muziek is geen doel — het is een reis.";
+      let i = 0;
+      const target = document.querySelector("header h2");
+      target.textContent = "";
+      const typer = setInterval(() => {
+        if (i < text.length) {
+          target.textContent += text[i];
+          i++;
+        } else {
+          clearInterval(typer);
+        }
+      }, 75);
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -138,6 +154,17 @@
   <footer>
     <p>&copy; 2025 David - Alle rechten voorbehouden</p>
     <p>Volg mij op <a href="https://www.facebook.com/CoolwijkvanDavid" target="_blank">Facebook</a></p>
+      <div style="margin-top: 1rem; font-size: 1.4rem;">
+        <a href="https://www.facebook.com/CoolwijkvanDavid" target="_blank" style="margin: 0 10px; color: #fddc9a; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 5px; filter: invert(86%) sepia(30%) saturate(370%) hue-rotate(360deg);"> Facebook
+        </a>
+        <a href="https://www.youtube.com/@captainfrasca" target="_blank" style="margin: 0 10px; color: #fddc9a; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 5px; filter: invert(86%) sepia(30%) saturate(370%) hue-rotate(360deg);"> YouTube
+        </a>
+        <a href="https://www.tiktok.com/@davidvancoolwijk" target="_blank" style="margin: 0 10px; color: #fddc9a; text-decoration: none;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 5px; filter: invert(86%) sepia(30%) saturate(370%) hue-rotate(360deg);"> TikTok
+        </a>
+      </div>
   </footer>
 </body>
 </html>
