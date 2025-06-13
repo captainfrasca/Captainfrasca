@@ -1,101 +1,133 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Beleef de ziel van countrymuziek met David. Authentieke, zelfgeschreven songteksten gecombineerd met AI-gecomponeerde klanken. Luister naar originele countryliedjes vol gevoel, rust en verhalen van de prairie.">
   <meta name="keywords" content="countrymuziek, David country, AI muziek, originele countrynummers, Nederlandse countryzanger, western muziek, zelfgeschreven songs, muziekportfolio">
   <meta name="author" content="David">
-  <link rel="canonical" href="https://captainfrasca.github.io/Captainfrasca/">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David - Country Muziekportfolio</title>
+  <link rel="canonical" href="https://captainfrasca.github.io/Captainfrasca/">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
-    .wind-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://www.transparenttextures.com/patterns/linen.png') repeat;
-      opacity: 0.04;
-      animation: drift 60s linear infinite;
-      z-index: 0;
-      pointer-events: none;
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background-color: #fdfaf6;
+      color: #2f1b0c;
     }
-
-    @keyframes drift {
-      0% { background-position: 0 0; }
-      100% { background-position: 1000px 0; }
+    header {
+      background: url('https://cdn.pixabay.com/photo/2020/09/01/06/56/desert-5533462_1280.jpg') center/cover no-repeat;
+      padding: 6rem 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 2px 2px 6px #000;
+    }
+    header h2 {
+      font-size: 1.4rem;
+      font-style: italic;
+      margin-top: 0.5rem;
+      text-shadow: 1px 1px 4px #000;
+    }
+    nav {
+      margin-top: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 1rem;
+    }
+    footer {
+      background: #2f1b0c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    footer a {
+      color: #fddc9a;
+      font-weight: bold;
     }
   </style>
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <script async defer data-domain="https://captainfrasca.github.io/Captainfrasca/" src="https://plausible.io/js/script.js"></script>
+  <script async defer data-domain="captainfrasca.github.io" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-  <div class="wind-overlay"></div>
-  <header style="background-image: url('https://cdn.pixabay.com/photo/2020/09/01/06/56/desert-5533462_1280.jpg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 6rem 1rem;">
-  <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; text-shadow: 1px 1px 4px #000;">David van Coolwijk</h1>
-  <h2 style="font-style: italic; font-size: 1.2rem; margin-top: 1rem; text-shadow: 1px 1px 3px #000;">“Muziek is geen doel — het is een reis.”</h2>
-  <nav>
-    <a href="#over">Over mij</a>
-    <a href="#muziek">Muziek</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main style="background-color: rgba(0, 0, 0, 0.6); border-radius: 12px; padding: 2rem; box-shadow: 0 0 20px rgba(0,0,0,0.3); max-width: 800px; margin: 2rem auto; animation: fadeIn 1s ease-in;">
-  <section id="over">
-    <img$3>
-    <p>Mijn naam is David van Coolwijk. Ik maak countrymuziek waarin verhaal, sfeer en emotie samenkomen. Alles wat je op deze site hoort, komt voort uit mijn liefde voor muziek en mijn drang om iets echts te vertellen. Elke tekst schrijf ik zelf, met zorg, vanuit herinnering, ervaring of verbeelding.</p>
-    <p>Wat je hoort is AI-geproduceerde zang en muziek, maar wat je voelt is mijn visie. Ik steek veel tijd in het samenstellen van elk nummer. Ik kies instrumenten die de juiste toon zetten, werk aan de opbouw, het ritme, en de balans tussen melodie en stilte. Mijn muziek is geen algoritme, maar een persoonlijke zoektocht naar klank en gevoel.</p>
-    <p>Of het nu gaat over het verlangen naar thuis, de stilte van de prairie of de eenzaamheid van het cowboybestaan — elk nummer probeert een stukje ziel over te brengen. Ik maak deze muziek niet om perfect te zijn, maar om oprecht te zijn. Mijn doel is niet om te imponeren, maar om te raken. Als mijn muziek jou even laat stilstaan, glimlachen of voelen, dan heb ik bereikt wat ik wilde.</p>
-  </section>
-
+  <header>
+    <h1>David van Coolwijk</h1>
+    <h2>“Muziek is geen doel — het is een reis.”</h2>
+    <nav>
+      <a href="#over">Over mij</a>
+      <a href="#muziek">Muziek</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="over">
+      <h2>Over mij</h2>
+      <p>Mijn naam is David van Coolwijk. Ik maak countrymuziek waarin verhaal, sfeer en emotie samenkomen. Alles wat je op deze site hoort, komt voort uit mijn liefde voor muziek en mijn drang om iets echts te vertellen. Elke tekst schrijf ik zelf, met zorg, vanuit herinnering, ervaring of verbeelding.</p>
+      <p>Wat je hoort is AI-geproduceerde zang en muziek, maar wat je voelt is mijn visie. Ik steek veel tijd in het samenstellen van elk nummer. Ik kies instrumenten die de juiste toon zetten, werk aan de opbouw, het ritme, en de balans tussen melodie en stilte. Mijn muziek is geen algoritme, maar een persoonlijke zoektocht naar klank en gevoel.</p>
+      <p>Of het nu gaat over het verlangen naar thuis, de stilte van de prairie of de eenzaamheid van het cowboybestaan — elk nummer probeert een stukje ziel over te brengen. Ik maak deze muziek niet om perfect te zijn, maar om oprecht te zijn. Mijn doel is niet om te imponeren, maar om te raken. Als mijn muziek jou even laat stilstaan, glimlachen of voelen, dan heb ik bereikt wat ik wilde.</p>
+    </section>
     <section id="muziek">
       <h2>Mijn muziek</h2>
       <p>Hieronder vind je een selectie van mijn nummers via YouTube:</p>
       <div>
-  <h3>🎵 When the Prairie Calls Me Home</h3>
-  <p><em>Een ode aan de wijdse stilte van het land en de stem van het verleden.</em><br>
-  "When the Prairie Calls Me Home" is meer dan een lied — het is een roep terug naar eenvoud, rust en verbondenheid. Geschreven vanuit het hart, zorgvuldig opgebouwd met AI-gecomponeerde instrumentatie, en doordrenkt met melancholie. Sluit je ogen en laat je meenemen naar waar je ziel thuiskomt: op de prairie.</p>
-  <iframe src="https://www.youtube.com/embed/RabXIVXG0h0" allowfullscreen></iframe>
-<a href="mailto:davidvancoolwijk@gmail.com" style="display:inline-block;padding:10px 20px;background:#fff;color:#3a2e1e;text-decoration:none;border-radius:5px;font-weight:bold;margin-bottom:2rem;">Neem contact op</a>
+        <h3>🎵 When the Prairie Calls Me Home</h3>
+        <p><em>Een ode aan de wijdse stilte van het land en de stem van het verleden.</em><br>
+        "When the Prairie Calls Me Home" is meer dan een lied — het is een roep terug naar eenvoud, rust en verbondenheid. Geschreven vanuit het hart, zorgvuldig opgebouwd met AI-gecomponeerde instrumentatie, en doordrenkt met melancholie.</p>
+        <iframe src="https://www.youtube.com/embed/RabXIVXG0h0" allowfullscreen></iframe>
       </div>
-<div>
-  <h3>🎵 Where the River Forgets My Name</h3>
-  <p><em>Een ingetogen reis langs herinnering en loslaten.</em><br>
-  "Where the River Forgets My Name" vertelt het verhaal van verdwijnen in de tijd, op de oevers van een rivier die alles meeneemt — ook wat ooit belangrijk was. De tekst is poëtisch en persoonlijk, met zorg geschreven. De muziek is een harmonieuze samensmelting van rust en reflectie, opgebouwd met AI-productie, maar gedreven door mijn gevoel. Laat dit nummer je meenemen naar een plek waar stilte spreekt.</p>
-  <iframe src="https://www.youtube.com/embed/tGuSWcjI4P8" allowfullscreen></iframe>
-</div>
       <div>
-  <h3>🎵 Dancing Through My Heart</h3>
-  <p><em>Een oprechte ode aan liefde, herinnering en de dans die nooit eindigt.</em><br>
-  "Dancing Through My Heart" vangt het gevoel van een voorbij moment dat toch blijft bestaan — in ritme, melodie en herinnering. De tekst is geschreven vanuit een diep persoonlijk gevoel en werd muzikaal tot leven gebracht met zorgvuldig samengestelde AI-instrumentatie. Laat je meevoeren door dit warme, dansende nummer dat in je hoofd blijft nazingen.</p>
-  <iframe src="https://www.youtube.com/embed/9mj488Ieydk" allowfullscreen></iframe>
-</div>
+        <h3>🎵 Where the River Forgets My Name</h3>
+        <p><em>Een ingetogen reis langs herinnering en loslaten.</em></p>
+        <iframe src="https://www.youtube.com/embed/tGuSWcjI4P8" allowfullscreen></iframe>
+      </div>
       <div>
-  <h3>🎵 A Cowboy's Life</h3>
-  <p><em>Een eerbetoon aan de vrijheid, de strijd en de eenzaamheid van het cowboybestaan.</em><br>
-  "A Cowboy's Life" schildert het leven van een man op het zadel — rijdend door uitgestrekte vlaktes, vechtend met herinneringen, trouw aan zijn eigen weg. In dit nummer hoor je de ziel van de cowboy: trots, koppig, maar ook breekbaar. De muziek is krachtig en gedragen, zorgvuldig gecomponeerd met AI, en de tekst komt recht uit mijn hart. Voor iedereen die zich weleens eenzaam voelt in de vrijheid.</p>
-  <iframe src="https://www.youtube.com/embed/oNijpaTiqts" allowfullscreen></iframe>
-</div>
-
-    <div>
-  <h3>🎵 My Truck Left Me and Took My Dog</h3>
-  <p><em>Een tragikomisch countrylied met een flinke knipoog — en een brok in de keel.</em><br>
-  "My Truck Left Me and Took My Dog" klinkt als een grap, maar raakt een diep gevoel. Het vertelt over het verlies van wat je lief is, verpakt in humor en eerlijkheid. Het nummer combineert klassieke countrythema’s met een moderne, luchtige stijl. De melodie blijft hangen, de tekst doet je glimlachen én nadenken. Soms is muziek de enige manier om verdriet écht uit te zingen.</p>
-  <iframe src="https://www.youtube.com/embed/ajzLwM2qdac" allowfullscreen></iframe>
-</div>
-</section>
-<section id="contact">
+        <h3>🎵 Dancing Through My Heart</h3>
+        <p><em>Een oprechte ode aan liefde, herinnering en de dans die nooit eindigt.</em></p>
+        <iframe src="https://www.youtube.com/embed/9mj488Ieydk" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>🎵 A Cowboy's Life</h3>
+        <p><em>Een eerbetoon aan de vrijheid, de strijd en de eenzaamheid van het cowboybestaan.</em></p>
+        <iframe src="https://www.youtube.com/embed/oNijpaTiqts" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h3>🎵 My Truck Left Me and Took My Dog</h3>
+        <p><em>Een tragikomisch countrylied met een flinke knipoog — en een brok in de keel.</em></p>
+        <iframe src="https://www.youtube.com/embed/ajzLwM2qdac" allowfullscreen></iframe>
+      </div>
+    </section>
+    <section id="contact">
       <h2>Contact</h2>
       <p>Stuur gerust een bericht via <a href="mailto:davidvancoolwijk@gmail.com">Davidvancoolwijk@gmail.com</a> voor samenwerkingen of vragen.</p>
     </section>
   </main>
   <footer>
     <p>&copy; 2025 David - Alle rechten voorbehouden</p>
-      <p>Volg mij op <a href="https://www.facebook.com/CoolwijkvanDavid" target="_blank" style="color: #3a2e1e; font-weight: bold;">Facebook</a></p>
+    <p>Volg mij op <a href="https://www.facebook.com/CoolwijkvanDavid" target="_blank">Facebook</a></p>
   </footer>
 </body>
 </html>
