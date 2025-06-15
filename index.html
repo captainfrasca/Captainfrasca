@@ -674,7 +674,20 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Daily Country Wisdom Section -->
+    <div style="background: linear-gradient(45deg, rgba(255, 165, 0, 0.1), rgba(139, 69, 19, 0.1)); margin: 4rem auto; padding: 3rem 2rem; border-radius: 25px; border: 1px solid rgba(255, 165, 0, 0.2); max-width: 1200px; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); animation: wisdomGlow 8s ease-in-out infinite;"></div>
+        
+        <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #ffa500, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem; position: relative; z-index: 2;">🌟 Daily Country Wisdom 🌟</h2>
+        
+        <div id="wisdomCard" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); position: relative; z-index: 2; max-width: 700px; margin: 0 auto; transition: all 0.3s ease;">
+            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">🤠</div>
+            <p id="dailyQuote" style="font-size: 1.4rem; font-style: italic; color: #d4a574; line-height: 1.6; margin-bottom: 1.5rem;">"Life's like a country song - it's got its ups and downs, but the melody always finds its way home."</p>
+            <div style="color: #ffa500; font-weight: bold; font-size: 1.1rem;">- David van Coolwijk</div>
+        </div>
+        
+        <button onclick="getNewWisdom()" style="margin-top: 2rem; padding: 12px 25px; background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; position: relative; z-index: 2;">Get New Wisdom ✨</button>
+    </div>
     <div style="background: rgba(255, 165, 0, 0.05); margin: 4rem auto; padding: 4rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.1); max-width: 1200px;">
         <h2 style="font-size: 3rem !important; text-align: center !important; margin: 0 auto 3rem auto !important; background: linear-gradient(45deg, #ffa500, #ffd700) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; width: 100% !important; display: block !important; text-align: center !important;">What Fans Are Saying</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
@@ -708,7 +721,52 @@
         </div>
     </div>
 
-    <!-- About Section -->
+    <!-- Smart Home Integration Section -->
+    <div style="background: rgba(255, 165, 0, 0.05); margin: 4rem auto; padding: 4rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.1); max-width: 1200px; text-align: center;">
+        <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #ffa500, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem;">🏠 Smart Home Integration</h2>
+        
+        <p style="color: #d4a574; font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Connect with David's music through your smart devices! Try these voice commands:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎵</div>
+                <h3 style="color: #ffa500; margin-bottom: 1rem;">Alexa Commands</h3>
+                <div style="color: #d4a574; line-height: 1.6;">
+                    "Alexa, play David van Coolwijk"<br>
+                    "Alexa, play Cowboys and Sad Songs"<br>
+                    "Alexa, shuffle David's playlist"
+                </div>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎤</div>
+                <h3 style="color: #ffa500; margin-bottom: 1rem;">Google Assistant</h3>
+                <div style="color: #d4a574; line-height: 1.6;">
+                    "Hey Google, play David van Coolwijk on Spotify"<br>
+                    "Hey Google, play country music by David"<br>
+                    "Hey Google, what's David's latest song?"
+                </div>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                <h3 style="color: #ffa500; margin-bottom: 1rem;">Siri Commands</h3>
+                <div style="color: #d4a574; line-height: 1.6;">
+                    "Hey Siri, play David van Coolwijk"<br>
+                    "Hey Siri, play When the Prairie Calls Me Home"<br>
+                    "Hey Siri, add David to my country playlist"
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: linear-gradient(45deg, rgba(255, 165, 0, 0.1), rgba(255, 215, 0, 0.1)); padding: 2rem; border-radius: 20px; max-width: 600px; margin: 0 auto;">
+            <p style="color: #ffa500; font-weight: bold; margin-bottom: 1rem;">🔗 Quick Setup Links:</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://open.spotify.com/artist/5wBCMjrqHOjsXi2AX1GW64" target="_blank" style="padding: 10px 20px; background: rgba(255, 255, 255, 0.1); color: #ffa500; text-decoration: none; border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.2); transition: all 0.3s ease;">Spotify Link</a>
+                <a href="https://www.youtube.com/@captainfrasca" target="_blank" style="padding: 10px 20px; background: rgba(255, 255, 255, 0.1); color: #ffa500; text-decoration: none; border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.2); transition: all 0.3s ease;">YouTube Music</a>
+            </div>
+        </div>
+    </div>
     <section class="section" id="about">
         <h2>About David</h2>
         <div class="about-content">
@@ -762,6 +820,90 @@
         // Enhanced mobile performance
         document.addEventListener('touchstart', function() {}, {passive: true});
         document.addEventListener('touchmove', function() {}, {passive: true});
+
+        // Daily Country Wisdom Feature
+        const countryWisdom = [
+            "Life's like a country song - it's got its ups and downs, but the melody always finds its way home.",
+            "Sometimes you gotta walk through the storm to appreciate the sunshine on the other side.",
+            "A cowboy's heart is measured not by the miles he's traveled, but by the stories he's gathered along the way.",
+            "The best country songs are written with three chords and the truth.",
+            "Home isn't a place on the map, it's the feeling you get when you hear that first guitar strum.",
+            "Every sunset is a reminder that even the longest days eventually find their peaceful ending.",
+            "The road less traveled isn't always easy, but it's where you'll find the best stories.",
+            "A good country song can heal a broken heart or break a healing one.",
+            "Sometimes the strongest cowboys are the ones who aren't afraid to cry.",
+            "The prairie teaches us that sometimes you need wide open spaces to find yourself."
+        ];
+
+        function getNewWisdom() {
+            const randomQuote = countryWisdom[Math.floor(Math.random() * countryWisdom.length)];
+            const quoteElement = document.getElementById('dailyQuote');
+            const card = document.getElementById('wisdomCard');
+            
+            // Add animation effect
+            card.style.transform = 'scale(0.95)';
+            card.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                quoteElement.textContent = `"${randomQuote}"`;
+                card.style.transform = 'scale(1)';
+                card.style.opacity = '1';
+            }, 200);
+        }
+
+        // Remix Lab Functions
+        let currentRemixMode = '';
+
+        function startRemix(mode) {
+            currentRemixMode = mode;
+            const player = document.getElementById('remixPlayer');
+            player.style.display = 'block';
+            player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Update UI based on mode
+            const modeText = {
+                'acoustic': '🎸 Acoustic Remix Mode - Strip down to essentials',
+                'speed': '🎶 Speed Remix Mode - Adjust tempo and pace', 
+                'karaoke': '🎤 Karaoke Mode - Remove vocals for singing'
+            };
+            
+            document.querySelector('#remixPlayer h4').innerHTML = modeText[mode];
+        }
+
+        function createRemix() {
+            const selectedSong = document.getElementById('songSelect').value;
+            if (!selectedSong) {
+                alert('Please select a song first!');
+                return;
+            }
+            
+            const songTitles = {
+                'cowboys': 'Cowboys and Sad Songs',
+                'prairie': 'When the Prairie Calls Me Home',
+                'river': 'Where the River Forgets My Name',
+                'dancing': 'Dancing Through My Heart',
+                'cowboy-life': 'A Cowboy\'s Life',
+                'truck': 'My Truck Left Me and Took My Dog'
+            };
+            
+            const modeDescriptions = {
+                'acoustic': 'acoustic version',
+                'speed': 'tempo-adjusted version',
+                'karaoke': 'instrumental karaoke version'
+            };
+            
+            alert(`🎵 Creating ${modeDescriptions[currentRemixMode]} of "${songTitles[selectedSong]}"!\n\nYour remix is being generated... In a real implementation, this would:\n\n• Process the audio file\n• Apply ${currentRemixMode} effects\n• Generate a downloadable remix\n• Save to your personal remix library\n\nComing soon! 🎸✨`);
+        }
+
+        function closeRemix() {
+            document.getElementById('remixPlayer').style.display = 'none';
+        }
+
+        // Initialize daily wisdom on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set a random quote on page load
+            getNewWisdom();
+        });
     </script>
 </body>
 </html>
