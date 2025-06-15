@@ -1,208 +1,559 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Beleef de ziel van countrymuziek met David. Authentieke, zelfgeschreven songteksten gecombineerd met AI-gecomponeerde klanken.">
-  <meta name="keywords" content="countrymuziek, David country, AI muziek, originele countrynummers, Nederlandse countryzanger, western muziek, muziekportfolio">
-  <meta name="author" content="David">
-  <title>David - Country Muziekportfolio</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Georgia', serif;
-      background: #f7f3ec;
-      color: #2e1c0e;
-    }
-    header {
-      background: url('cowboy.png') center/cover no-repeat;
-      min-height: 400px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 6px #000;
-    }
-    header h2 {
-      font-style: italic;
-      margin-top: 0.5rem;
-      font-size: 1.4rem;
-      text-shadow: 1px 1px 4px #000;
-    }
-    nav {
-      background-color: #422814;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: #fff3dc;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    section h2 {
-      border-bottom: 2px solid #d8c2a6;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      margin: 1rem 0;
-      border: none;
-    }
-    footer {
-      background-color: #422814;
-      color: #fff3dc;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    footer a {
-      color: #fddc9a;
-      text-decoration: none;
-    }
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const text = "Muziek is geen doel — het is een reis.";
-      let i = 0;
-      const target = document.querySelector("header h2");
-      target.textContent = "";
-      const typer = setInterval(() => {
-        if (i < text.length) {
-          target.textContent += text[i];
-          i++;
-        } else {
-          clearInterval(typer);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David van Coolwijk - Original Country Songs, AI Performance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }, 75);
-    });
-  </script>
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c1810;
+            background: #f5f3f0;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(205, 133, 63, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23d4a574" width="1200" height="800"/><path fill="%23c19660" d="M0 400L50 420C100 440 200 480 300 500C400 520 500 520 600 500C700 480 800 440 900 420C1000 400 1100 400 1150 400H1200V800H0V400Z"/><circle fill="%23f4e4bc" cx="300" cy="200" r="80" opacity="0.6"/><rect fill="%238b6914" x="800" y="600" width="40" height="120" opacity="0.4"/></svg>') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #8B4513;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Music Section */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .song-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0d5cc;
+        }
+
+        .song-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .song-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #8B4513;
+        }
+
+        .song-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .play-button {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: #e55a2b;
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            margin: 0 -2rem;
+            padding: 80px 2rem;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(45deg, #8B4513, #CD853F);
+            border-radius: 20px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.3);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #8B4513;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ff6b35 0%, #ff8c42 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+            color: white;
+            text-align: center;
+            margin: 0 -2rem;
+            padding: 80px 2rem;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* YouTube Embed Styles */
+        .youtube-embed {
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .youtube-embed iframe {
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div id="intro-banner" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000 url('cowboy.png') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:1000; opacity:1; transition:opacity 2s ease;">
-    <h1 style="color:white; font-size:3rem; text-shadow:2px 2px 8px #000;">Welkom in mijn wereld van countrymuziek</h1>
-    <p style="color:#fddc9a; margin-top:1rem; font-style:italic;">“Let the prairie wind carry your story...”</p>
-  </div>
-  <script>
-    window.addEventListener("load", function() {
-      setTimeout(() => {
-        const intro = document.getElementById("intro-banner");
-        intro.style.opacity = 0;
-        setTimeout(() => intro.style.display = "none", 2000);
-      }, 2500);
-    });
-  </script>
-  <header>
-    <h1>David van Coolwijk</h1>
-    <h2>“Muziek is geen doel — het is een reis.”</h2>
-  </header>
-  <nav>
-    <a href="#over">Over mij</a>
-    <a href="#muziek">Muziek</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <main>
-    <section id="quotes" style="text-align: center; margin-bottom: 3rem;">
-      <h2>Inspiratie uit het Wilde Westen</h2>
-      <blockquote id="quote" style="font-style: italic; font-size: 1.2rem; color: #5c3b21; margin-top: 1rem;">
-        “Sometimes the road takes you home.”
-      </blockquote>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">🎸 David van Coolwijk</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Authentic Country Stories</h1>
+            <p class="subtitle">Original Songs • AI Performance • Pure Heart</p>
+            <p class="tagline">"Where traditional songwriting meets tomorrow's technology"</p>
+            <div class="cta-buttons">
+                <a href="#music" class="btn btn-primary">Listen Now</a>
+                <a href="#about" class="btn btn-secondary">My Story</a>
+            </div>
+        </div>
     </section>
+
+    <section id="music" class="section">
+        <h2>Latest Tracks</h2>
+        <div class="music-grid">
+            <div class="song-card">
+                <div class="song-title">🎵 "Cowboys and Sad Songs"</div>
+                <p class="song-description">A heartfelt ballad about the stories we carry and the music that speaks to our souls. Sometimes the saddest songs tell the truest tales.</p>
+                <div class="youtube-embed">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/H44Wis5Vd3o?rel=0" 
+                            title="Cowboys and Sad Songs" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="song-card">
+                <div class="song-title">🎵 "When the Prairie Calls Me Home"</div>
+                <p class="song-description">There's something about wide open spaces that speaks to the heart. A song about longing for the place where your roots run deep and the horizon goes on forever.</p>
+                <div class="youtube-embed">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/RabXIVXG0h0" 
+                            title="When the Prairie Calls Me Home" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="song-card">
+                <div class="song-title">🎵 "Where the River Forgets My Name"</div>
+                <p class="song-description">Sometimes we need to go where nobody knows who we used to be. A haunting melody about finding peace in solitude and letting the current wash away our past.</p>
+                <div class="youtube-embed">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/tGuSWcjI4P8" 
+                            title="Where the River Forgets My Name" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="song-card">
+                <div class="song-title">🎵 "Dancing Through My Heart"</div>
+                <p class="song-description">Love has a way of moving through you like music itself. A tender ballad about how the right person can make your whole world feel like a slow dance under the stars.</p>
+                <div class="youtube-embed">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/9mj488Ieydk" 
+                            title="Dancing Through My Heart" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="song-card">
+                <div class="song-title">🎵 "A Cowboy's Life"</div>
+                <p class="song-description">Wide open ranges, long days in the saddle, and the freedom that comes with living on your own terms. A tribute to the timeless spirit of the American cowboy.</p>
+                <div class="youtube-embed">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/oNijpaTiqts" 
+                            title="A Cowboy's Life" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="song-card">
+                <div class="song-title">🎵 "My Truck Left Me and Took My Dog"</div>
+                <p class="song-description">When everything goes wrong, it really goes wrong. A tongue-in-cheek country anthem about life's cruel sense of humor and the things we hold dear.</p>
+                <div class="youtube-embed">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/ajzLwM2qdac" 
+                            title="My Truck Left Me and Took My Dog" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-image">
+                🎼
+            </div>
+            <div class="about-text">
+                <h3>The Heart Behind the Music</h3>
+                <p>I'm a songwriter and producer who believes great country music starts with authentic stories. Every song begins with a real moment, a genuine feeling, or a truth that needs to be told.</p>
+                
+                <p>What makes my approach unique is how I bring these stories to life. I write and produce everything myself, then use cutting-edge AI vocal technology to perform the songs. This lets me focus entirely on the songwriting and production while still delivering the emotional vocals that country music demands.</p>
+                
+                <div class="highlight">
+                    "It's not about replacing the human element – it's about amplifying the stories that matter most."
+                </div>
+                
+                <p>Each track is crafted with the same attention to detail and emotional honesty that's defined country music for generations. The technology just gives me new ways to tell those timeless stories.</p>
+                
+                <p>When you listen to my music, you're hearing stories written by someone who understands what it means to love, lose, dream, and keep going. That's what country music has always been about.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Let's Connect</h2>
+        <p>Ready to hear more? Want to work together? Let's talk music.</p>
+        <div class="contact-links">
+            <a href="mailto:your.email@example.com" class="contact-link">📧 Email Me</a>
+            <a href="#" class="contact-link">🎵 Spotify</a>
+            <a href="#" class="contact-link">📱 Instagram</a>
+            <a href="#" class="contact-link">🎥 YouTube</a>
+            <a href="#" class="contact-link">🎧 SoundCloud</a>
+        </div>
+    </section>
+
     <script>
-      const quotes = [
-        "Sometimes the road takes you home.",
-        "A cowboy is a poet with dust on his boots.",
-        "Even the wildest horses come home.",
-        "Let the prairie wind carry your story.",
-        "Under every hat lies a story untold."
-      ];
-      let currentQuote = 0;
-      setInterval(() => {
-        currentQuote = (currentQuote + 1) % quotes.length;
-        document.getElementById("quote").textContent = quotes[currentQuote];
-      }, 5000);
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(139, 69, 19, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #8B4513 0%, #CD853F 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all song cards and sections
+        document.querySelectorAll('.song-card, .about-content, .contact-links').forEach(el => {
+            observer.observe(el);
+        });
     </script>
-    <section id="over">
-      <h2>Over mij</h2>
-      <p>Mijn naam is David van Coolwijk. Ik maak countrymuziek waarin verhaal, sfeer en emotie samenkomen. Alles wat je op deze site hoort, komt voort uit mijn liefde voor muziek en mijn drang om iets echts te vertellen. Elke tekst schrijf ik zelf, met zorg, vanuit herinnering, ervaring of verbeelding.</p>
-      <p>Wat je hoort is AI-geproduceerde zang en muziek, maar wat je voelt is mijn visie. Ik steek veel tijd in het samenstellen van elk nummer. Ik kies instrumenten die de juiste toon zetten, werk aan de opbouw, het ritme, en de balans tussen melodie en stilte. Mijn muziek is geen algoritme, maar een persoonlijke zoektocht naar klank en gevoel.</p>
-      <p>Of het nu gaat over het verlangen naar thuis, de stilte van de prairie of de eenzaamheid van het cowboybestaan — elk nummer probeert een stukje ziel over te brengen. Mijn doel is niet om te imponeren, maar om te raken.</p>
-    </section>
-    <section id="muziek">
-  <h2>Mijn muziek</h2>
-      <div>
-        <h3>🎵 Cowboys and Sad Songs</h3>
-<p><em>Een melancholisch eerbetoon aan verloren liefde, eenzaamheid en troost in muziek — waar cowboys en verdrietige liedjes hand in hand gaan.</em></p>
-        <iframe src="https://www.youtube.com/embed/H44Wis5Vd3o" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h3>🎵 When the Prairie Calls Me Home</h3>
-        <p><em>Een ode aan de wijdse stilte van het land en de stem van het verleden.</em></p>
-        <iframe src="https://www.youtube.com/embed/RabXIVXG0h0" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h3>🎵 Where the River Forgets My Name</h3>
-        <p><em>Een ingetogen reis langs herinnering en loslaten.</em></p>
-        <iframe src="https://www.youtube.com/embed/tGuSWcjI4P8" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h3>🎵 Dancing Through My Heart</h3>
-        <p><em>Een oprechte ode aan liefde, herinnering en de dans die nooit eindigt.</em></p>
-        <iframe src="https://www.youtube.com/embed/9mj488Ieydk" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h3>🎵 A Cowboy's Life</h3>
-        <p><em>Een eerbetoon aan de vrijheid, de strijd en de eenzaamheid van het cowboybestaan.</em></p>
-        <iframe src="https://www.youtube.com/embed/oNijpaTiqts" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h3>🎵 My Truck Left Me and Took My Dog</h3>
-        <p><em>Een tragikomisch countrylied met een flinke knipoog — en een brok in de keel.</em></p>
-        <iframe src="https://www.youtube.com/embed/ajzLwM2qdac" allowfullscreen></iframe>
-      </div>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Stuur gerust een bericht via <a href="mailto:davidvancoolwijk@gmail.com">davidvancoolwijk@gmail.com</a> voor samenwerkingen of vragen.</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 David - Alle rechten voorbehouden</p>
-    <p>Volg mij op <a href="https://www.facebook.com/CoolwijkvanDavid" target="_blank">Facebook</a></p>
-      <div style="margin-top: 1rem; font-size: 1.4rem;">
-        <a href="https://www.facebook.com/CoolwijkvanDavid" target="_blank" style="margin: 0 10px; color: #fddc9a; text-decoration: none;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 5px; filter: invert(86%) sepia(30%) saturate(370%) hue-rotate(360deg);"> Facebook
-        </a>
-        <a href="https://www.youtube.com/@captainfrasca" target="_blank" style="margin: 0 10px; color: #fddc9a; text-decoration: none;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 5px; filter: invert(86%) sepia(30%) saturate(370%) hue-rotate(360deg);"> YouTube
-        </a>
-        <a href="https://www.tiktok.com/@davidvancoolwijk" target="_blank" style="margin: 0 10px; color: #fddc9a; text-decoration: none;">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 5px; filter: invert(86%) sepia(30%) saturate(370%) hue-rotate(360deg);"> TikTok
-        </a>
-      </div>
-  </footer>
 </body>
 </html>
