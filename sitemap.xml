@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        
+    <!-- Homepage -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://captainfrasca.github.io/Captainfrasca/hero-image.jpg</image:loc>
+            <image:title>David van Coolwijk Country Music Performance</image:title>
+            <image:caption>David van Coolwijk performing country music with acoustic guitar</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://captainfrasca.github.io/Captainfrasca/about-photo.jpg</image:loc>
+            <image:title>David van Coolwijk Artist Photo</image:title>
+            <image:caption>Professional photo of country music artist David van Coolwijk</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Music Section -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#music</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/H44Wis5Vd3o/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Cowboys and Sad Songs - David van Coolwijk</video:title>
+            <video:description>Country music song about cowboys and their stories, performed by David van Coolwijk</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=H44Wis5Vd3o</video:content_loc>
+            <video:duration>210</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+            <video:tag>country music</video:tag>
+            <video:tag>cowboys</video:tag>
+            <video:tag>acoustic guitar</video:tag>
+            <video:tag>original song</video:tag>
+        </video:video>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/RabXIVXG0h0/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>When the Prairie Calls Me Home - David van Coolwijk</video:title>
+            <video:description>A longing ballad about the pull of home and the land that shapes us</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=RabXIVXG0h0</video:content_loc>
+            <video:duration>255</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+            <video:tag>country music</video:tag>
+            <video:tag>prairie</video:tag>
+            <video:tag>home</video:tag>
+            <video:tag>ballad</video:tag>
+        </video:video>
+    </url>
+
+    <!-- Fan Reviews/Testimonials Section -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#testimonials</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Daily Country Wisdom Section -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#wisdom</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Remix Lab Section -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#remix</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- About Section -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#about</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://captainfrasca.github.io/Captainfrasca/about-photo.jpg</image:loc>
+            <image:title>About David van Coolwijk</image:title>
+            <image:caption>Learn about country music artist David van Coolwijk</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Contact Section -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#contact</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Individual Song Pages (Virtual URLs for SEO) -->
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#song-cowboys-and-sad-songs</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/H44Wis5Vd3o/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Cowboys and Sad Songs</video:title>
+            <video:description>Every cowboy has a story to tell, and mine comes with a melody. A heartfelt tribute to the men who ride the range and the songs that keep them company.</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=H44Wis5Vd3o</video:content_loc>
+            <video:duration>210</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#song-when-the-prairie-calls-me-home</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/RabXIVXG0h0/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>When the Prairie Calls Me Home</video:title>
+            <video:description>There's something about wide open spaces that calls to the soul. A longing ballad about the pull of home and the land that shapes us.</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=RabXIVXG0h0</video:content_loc>
+            <video:duration>255</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#song-where-the-river-forgets-my-name</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/tGuSWcjI4P8/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Where the River Forgets My Name</video:title>
+            <video:description>Sometimes we need to go where nobody knows who we used to be. A haunting melody about finding peace in solitude and letting the current wash away our past.</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=tGuSWcjI4P8</video:content_loc>
+            <video:duration>225</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#song-dancing-through-my-heart</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/9mj488Ieydk/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Dancing Through My Heart</video:title>
+            <video:description>Love has a way of moving through you like music itself. A tender ballad about how the right person can make your whole world feel like a slow dance under the stars.</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=9mj488Ieydk</video:content_loc>
+            <video:duration>200</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#song-a-cowboys-life</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/oNijpaTiqts/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>A Cowboy's Life</video:title>
+            <video:description>Wide open ranges, long days in the saddle, and the freedom that comes with living on your own terms. A tribute to the timeless spirit of the American cowboy.</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=oNijpaTiqts</video:content_loc>
+            <video:duration>240</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+    <url>
+        <loc>https://captainfrasca.github.io/Captainfrasca/#song-my-truck-left-me-and-took-my-dog</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/ajzLwM2qdac/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>My Truck Left Me and Took My Dog</video:title>
+            <video:description>When everything goes wrong, it really goes wrong. A tongue-in-cheek country anthem about life's cruel sense of humor and the things we hold dear.</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=ajzLwM2qdac</video:content_loc>
+            <video:duration>190</video:duration>
+            <video:publication_date>2024-12-01</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+        </video:video>
+    </url>
+
+</urlset>
