@@ -35,173 +35,179 @@
     <meta property="twitter:image" content="https://captainfrasca.github.io/Captainfrasca/hero-image.jpg">
     <meta property="twitter:creator" content="@davidvancoolwijk">
 
-    <!-- Structured Data - Music Artist -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicGroup",
-      "name": "David van Coolwijk",
-      "alternateName": "David van Coolwijk Country Music",
-      "description": "Country music artist combining traditional songwriting with AI performance technology",
-      "genre": ["Country Music", "Acoustic", "Folk Country"],
-      "url": "https://captainfrasca.github.io/Captainfrasca/",
-      "image": "https://captainfrasca.github.io/Captainfrasca/about-photo.jpg",
-      "foundingDate": "2024",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "Netherlands"
-      },
-      "sameAs": [
-        "https://www.youtube.com/@captainfrasca",
-        "https://open.spotify.com/artist/5wBCMjrqHOjsXi2AX1GW64",
-        "https://soundcloud.com/david-van-coolwijk-801675736",
-        "https://www.tiktok.com/@davidvancoolwijk"
-      ],
-      "member": {
-        "@type": "Person",
-        "name": "David van Coolwijk",
-        "email": "davidvancoolwijk@gmail.com",
-        "jobTitle": "Country Music Artist",
-        "nationality": "Dutch"
-      },
-      "album": [
-        {
-          "@type": "MusicAlbum",
-          "name": "Country Stories Collection",
-          "albumProductionType": "StudioAlbum",
-          "track": [
-            {
-              "@type": "MusicRecording",
-              "name": "Cowboys and Sad Songs",
-              "duration": "PT3M30S",
-              "genre": "Country Music"
-            },
-            {
-              "@type": "MusicRecording", 
-              "name": "When the Prairie Calls Me Home",
-              "duration": "PT4M15S",
-              "genre": "Country Music"
-            },
-            {
-              "@type": "MusicRecording",
-              "name": "Where the River Forgets My Name", 
-              "duration": "PT3M45S",
-              "genre": "Country Music"
-            },
-            {
-              "@type": "MusicRecording",
-              "name": "Dancing Through My Heart",
-              "duration": "PT3M20S", 
-              "genre": "Country Music"
-            },
-            {
-              "@type": "MusicRecording",
-              "name": "A Cowboy's Life",
-              "duration": "PT4M00S",
-              "genre": "Country Music"
-            },
-            {
-              "@type": "MusicRecording",
-              "name": "My Truck Left Me and Took My Dog",
-              "duration": "PT3M10S",
-              "genre": "Country Music"
-            }
-          ]
-        }
-      ]
-    }
-    </script>
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#ffa500">
-    <meta name="msapplication-TileColor" content="#ffa500">
-    <meta name="application-name" content="David van Coolwijk">
-    
-    <!-- Preconnect for Performance -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.youtube.com">
-    <link rel="preconnect" href="https://open.spotify.com">
-    
-    <!-- Country/Western Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rye:wght@400&family=Butcherman&family=Faster+One&family=Nosifer&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    <!-- Sitemap -->
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
     <style>
+        :root {
+            --primary-orange: #FF6B35;
+            --secondary-gold: #F7931E;
+            --accent-yellow: #FFD23F;
+            --warm-brown: #8B4513;
+            --dark-bg: #0A0A0A;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --text-accent: #FFB366;
+            --shadow-color: rgba(255, 107, 53, 0.15);
+            --blur-amount: 20px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #f5f3f0;
-            overflow-x: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Animated background */
-        body::before {
-            content: '';
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Advanced Background with Particles */
+        .background-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .background-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 165, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
-            animation: backgroundDrift 8s ease-in-out infinite;
-            pointer-events: none;
-            z-index: -1;
+                radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.06) 0%, transparent 60%),
+                radial-gradient(circle at 40% 60%, rgba(255, 210, 63, 0.04) 0%, transparent 60%),
+                linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
+            animation: backgroundShift 20s ease-in-out infinite;
         }
 
-        @keyframes backgroundDrift {
-            0%, 100% { transform: translateX(0px) translateY(0px) scale(1) rotate(0deg); }
-            25% { transform: translateX(50px) translateY(-30px) scale(1.1) rotate(1deg); }
-            50% { transform: translateX(-30px) translateY(40px) scale(0.9) rotate(-1deg); }
-            75% { transform: translateX(40px) translateY(-20px) scale(1.05) rotate(0.5deg); }
+        @keyframes backgroundShift {
+            0%, 100% { 
+                transform: translateX(0px) translateY(0px) scale(1) rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            25% { 
+                transform: translateX(50px) translateY(-30px) scale(1.05) rotate(1deg);
+                filter: hue-rotate(5deg);
+            }
+            50% { 
+                transform: translateX(-30px) translateY(40px) scale(0.95) rotate(-1deg);
+                filter: hue-rotate(10deg);
+            }
+            75% { 
+                transform: translateX(30px) translateY(-20px) scale(1.02) rotate(0.5deg);
+                filter: hue-rotate(5deg);
+            }
         }
 
-        /* Header */
-        .header {
+        /* Particle System */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Glassmorphism Navigation */
+        .nav-container {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 165, 0, 0.2);
             z-index: 1000;
-            transition: all 0.3s ease;
+            padding: 0 2rem;
         }
 
-        .nav {
+        .nav-glass {
+            margin: 1rem auto;
             max-width: 1200px;
-            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
             padding: 1rem 2rem;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #ffa500;
-            text-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold), var(--accent-yellow));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .nav-links {
@@ -210,101 +216,119 @@
             list-style: none;
         }
 
-        .nav-links a {
-            color: #f5f3f0;
+        .nav-link {
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
         }
 
-        .nav-links a::after {
+        .nav-link::before {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #ffa500;
-            transition: width 0.3s ease;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold));
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--dark-bg);
+            border-radius: 11px;
+            transition: background 0.3s ease;
         }
 
-        .nav-links a:hover {
-            color: #ffa500;
-            text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+        .nav-link span {
+            position: relative;
+            z-index: 1;
         }
 
-        /* Hero Section - Perfect Centering */
+        .nav-link:hover::before {
+            opacity: 1;
+        }
+
+        .nav-link:hover::after {
+            background: transparent;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 20px var(--primary-orange);
+        }
+
+        /* Hero Section with 3D Effects */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-                linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #1a1a1a 100%);
             position: relative;
             overflow: hidden;
-            padding: 0 2rem;
+            perspective: 1000px;
         }
 
-        .hero::before {
-            content: '🤠';
+        .hero-bg-element {
             position: absolute;
-            font-size: 25rem;
-            opacity: 0.05;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: heroFloat 12s ease-in-out infinite;
+            font-size: 30rem;
+            opacity: 0.03;
+            color: var(--primary-orange);
+            animation: heroRotate 30s linear infinite;
             pointer-events: none;
         }
 
-        @keyframes heroFloat {
-            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
-            25% { transform: translate(-45%, -55%) rotate(3deg) scale(1.1); }
-            50% { transform: translate(-55%, -45%) rotate(-2deg) scale(0.9); }
-            75% { transform: translate(-50%, -50%) rotate(1deg) scale(1.05); }
+        @keyframes heroRotate {
+            from { transform: rotate(0deg) translateZ(0); }
+            to { transform: rotate(360deg) translateZ(0); }
         }
 
         .hero-content {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 4rem 3rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 165, 0, 0.1);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            text-align: center;
+            padding: 3rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transform: translateZ(0);
+            animation: heroFloat 6s ease-in-out infinite;
             position: relative;
-            z-index: 10;
-            animation: contentFloat 6s ease-in-out infinite;
-            /* Perfect vertical and horizontal centering */
-            transform: translateY(0);
         }
 
-        @keyframes contentFloat {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-15px) scale(1.02); }
+        @keyframes heroFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            }
+            50% { 
+                transform: translateY(-20px) rotateX(2deg) rotateY(1deg);
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            }
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #ffa500, #ff8c00, #ffd700);
-            background-size: 200% 200%;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold), var(--accent-yellow), var(--primary-orange));
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: none;
-            animation: titleShimmer 3s ease-in-out infinite;
+            animation: titleShimmer 4s ease-in-out infinite;
             line-height: 1.2;
+            text-shadow: 0 0 40px rgba(255, 107, 53, 0.3);
         }
 
         @keyframes titleShimmer {
@@ -313,21 +337,21 @@
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            color: #d4a574;
+            font-size: 1.5rem;
             font-weight: 500;
+            color: var(--text-accent);
+            margin-bottom: 1rem;
+            opacity: 0.9;
         }
 
-        .hero-tagline {
+        .hero-description {
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            color: #a0a0a0;
-            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .hero-buttons {
@@ -335,521 +359,644 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            align-items: center;
         }
 
+        /* Modern Buttons */
         .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
-            display: inline-block;
             position: relative;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
-            min-width: 160px;
+            min-width: 180px;
+            justify-content: center;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold));
+            transition: transform 0.3s ease;
+            z-index: -1;
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #ffa500, #ff8c00);
-            color: #000;
-            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.4);
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold));
+            color: white;
+            box-shadow: 
+                0 10px 30px rgba(255, 107, 53, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
         .btn-primary:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(255, 165, 0, 0.6);
+            box-shadow: 
+                0 20px 50px rgba(255, 107, 53, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffa500;
-            border: 2px solid rgba(255, 165, 0, 0.5);
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary::before {
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold));
+            transform: translateY(100%);
+        }
+
+        .btn-secondary:hover::before {
+            transform: translateY(0);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 165, 0, 0.1);
-            border-color: #ffa500;
             transform: translateY(-5px) scale(1.05);
+            border-color: var(--primary-orange);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.3);
         }
 
         /* Section Styling */
         .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
+            padding: 8rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
         }
 
-        .section h2 {
-            font-size: 3rem;
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
             text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #ffa500, #ffd700);
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-yellow));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            width: 100%;
-            display: block;
+            position: relative;
         }
 
-        /* Music Section */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--secondary-gold));
+            border-radius: 2px;
+        }
+
+        /* Music Grid with Advanced Cards */
         .music-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
-        .song-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 165, 0, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-            animation: cardFloat 8s ease-in-out infinite;
-            animation-delay: calc(var(--card-index) * 0.5s);
-        }
-
-        .song-card:nth-child(1) { --card-index: 0; }
-        .song-card:nth-child(2) { --card-index: 1; }
-        .song-card:nth-child(3) { --card-index: 2; }
-        .song-card:nth-child(4) { --card-index: 3; }
-        .song-card:nth-child(5) { --card-index: 4; }
-        .song-card:nth-child(6) { --card-index: 5; }
-
-        @keyframes cardFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(0.5deg); }
-        }
-
-        .song-card:hover {
-            transform: translateY(-15px) scale(1.05) !important;
-            border-color: rgba(255, 165, 0, 0.4);
-            box-shadow: 0 25px 50px rgba(255, 165, 0, 0.3);
-            animation-play-state: paused;
-        }
-
-        .song-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #ffa500;
-            margin-bottom: 1rem;
-            animation: titleGlow 4s ease-in-out infinite;
-        }
-
-        @keyframes titleGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 165, 0, 0.3); }
-            50% { text-shadow: 0 0 20px rgba(255, 165, 0, 0.6); }
-        }
-
-        .song-description {
-            color: #d4a574;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .youtube-embed {
-            border-radius: 15px;
+        .music-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            background: rgba(255, 165, 0, 0.05);
-            margin: 4rem 0;
-            padding: 4rem 2rem;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 165, 0, 0.1);
-            text-align: center;
+        .music-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
         }
 
-        .testimonials h2 {
-            font-size: 3rem !important;
-            text-align: center !important;
-            margin: 0 auto 3rem auto !important;
-            background: linear-gradient(45deg, #ffa500, #ffd700) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            background-clip: text !important;
-            width: 100% !important;
-            display: block !important;
+        .music-card::after {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--dark-bg);
+            border-radius: 23px;
+            transition: background 0.3s ease;
+            z-index: -1;
         }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmin(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .music-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 25px 80px rgba(255, 107, 53, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 2rem;
+        .music-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .music-card:hover::after {
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .music-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .music-card-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .video-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .music-card:hover .video-container {
+            transform: scale(1.02);
+        }
+
+        /* Advanced Music Player */
+        .music-player-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            margin: 6rem auto;
+            padding: 4rem 3rem;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .music-player-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, var(--primary-orange) 0%, transparent 70%),
+                radial-gradient(circle at 70% 70%, var(--secondary-gold) 0%, transparent 70%);
+            opacity: 0.03;
+            animation: playerGlow 15s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes playerGlow {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+        }
+
+        .player-interface {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .album-art-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .album-art {
+            width: 250px;
+            height: 250px;
             border-radius: 20px;
-            border: 1px solid rgba(255, 165, 0, 0.1);
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold), var(--accent-yellow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 60px rgba(255, 107, 53, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 165, 0, 0.3);
+        .album-art::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%) rotate(45deg);
+            animation: albumShine 3s ease-in-out infinite;
         }
 
-        .stars {
-            color: #ffd700;
+        @keyframes albumShine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(300%) rotate(45deg); }
+        }
+
+        .track-info {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .track-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .track-artist {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .control-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .quote {
-            font-style: italic;
-            color: #d4a574;
-            margin-bottom: 1rem;
-            line-height: 1.6;
+        .control-btn:hover {
+            transform: scale(1.1);
+            background: rgba(255, 107, 53, 0.2);
+            border-color: var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
         }
 
-        .author {
-            color: #ffa500;
-            font-weight: bold;
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold));
+            border: none;
+            font-size: 2rem;
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
         }
 
-        .location {
-            color: #a0a0a0;
-            font-size: 0.9rem;
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.7);
         }
 
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 3rem;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
             align-items: center;
-            margin-top: 2rem;
+            margin-top: 4rem;
         }
 
         .about-image {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(139, 69, 19, 0.3)), 
-                        url('about-photo.jpg') center/cover;
-            border-radius: 20px;
-            aspect-ratio: 1;
-            box-shadow: 0 20px 40px rgba(255, 165, 0, 0.3);
-            border: 2px solid rgba(255, 165, 0, 0.2);
-            transition: all 0.3s ease;
+            width: 350px;
+            height: 350px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--secondary-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: 
+                0 25px 80px rgba(255, 107, 53, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%) rotate(45deg);
+            animation: imageShine 4s ease-in-out infinite;
+        }
+
+        @keyframes imageShine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(300%) rotate(45deg); }
         }
 
         .about-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 30px 60px rgba(255, 165, 0, 0.4);
-            border-color: rgba(255, 165, 0, 0.4);
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 35px 100px rgba(255, 107, 53, 0.6);
         }
 
         .about-text {
-            color: #d4a574;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
             line-height: 1.8;
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         /* Contact Section */
-        .contact {
-            background: rgba(255, 165, 0, 0.05);
-            border-radius: 30px;
-            padding: 4rem 2rem;
+        .contact-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 4rem 3rem;
             text-align: center;
-            border: 1px solid rgba(255, 165, 0, 0.1);
+            margin: 6rem auto;
+            max-width: 1000px;
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-link {
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffa500;
+            padding: 1rem 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-amount));
+            color: var(--text-primary);
             text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 165, 0, 0.2);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .contact-link:hover {
-            background: rgba(255, 165, 0, 0.1);
-            border-color: #ffa500;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.2);
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 107, 53, 0.1);
+            border-color: var(--primary-orange);
+            box-shadow: 0 15px 50px rgba(255, 107, 53, 0.3);
+            color: var(--primary-orange);
         }
 
-        /* Review Cards Hover Effects */
-        .review-card:hover {
-            transform: translateY(-8px) scale(1.02) !important;
-            border-color: rgba(255, 165, 0, 0.3) !important;
-            box-shadow: 0 15px 35px rgba(255, 165, 0, 0.2) !important;
-        }
-
-        /* Star Rating Styling */
-        .star {
-            user-select: none;
-            margin: 0 2px;
-        }
-
-        .star:hover {
-            transform: scale(1.2);
-        }
-
-        /* Music Player Animations */
-        @keyframes musicGlow {
-            0%, 100% { transform: translateX(0px) translateY(0px) rotate(0deg); }
-            25% { transform: translateX(30px) translateY(-20px) rotate(1deg); }
-            50% { transform: translateX(-20px) translateY(30px) rotate(-1deg); }
-            75% { transform: translateX(20px) translateY(-15px) rotate(0.5deg); }
-        }
-
-        @keyframes vinylShine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(300%) rotate(45deg); }
-        }
-
-        @keyframes progressShine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(200%); }
-        }
-
-        @keyframes visualizerBounce {
-            0%, 100% { transform: scaleY(0.3); }
-            50% { transform: scaleY(1); }
-        }
-
-        /* Music Player Button Hover Effects */
-        #playPauseBtn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 35px rgba(255, 165, 0, 0.6);
-        }
-
-        #prevBtn:hover, #nextBtn:hover {
-            background: rgba(255, 165, 0, 0.2);
-            border-color: rgba(255, 165, 0, 0.5);
-            transform: scale(1.1);
-        }
-
-        #shuffleBtn:hover, #repeatBtn:hover {
-            color: #ffa500;
-            background: rgba(255, 165, 0, 0.1);
-            transform: scale(1.1);
-        }
-
-        #shuffleBtn.active, #repeatBtn.active {
-            color: #ffa500;
-            background: rgba(255, 165, 0, 0.2);
-        }
-
-        /* Playlist Items */
-        .playlist-item {
-            padding: 0.8rem;
-            border-radius: 10px;
-            margin-bottom: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .playlist-item:hover {
-            background: rgba(255, 165, 0, 0.1);
-            border-color: rgba(255, 165, 0, 0.2);
-            transform: translateX(5px);
-        }
-
-        .playlist-item.active {
-            background: rgba(255, 165, 0, 0.2);
-            border-color: rgba(255, 165, 0, 0.4);
-            transform: translateX(10px);
-        }
-
-        .playlist-item.playing {
-            animation: playingPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes playingPulse {
-            0%, 100% { box-shadow: 0 0 10px rgba(255, 165, 0, 0.3); }
-            50% { box-shadow: 0 0 20px rgba(255, 165, 0, 0.6); }
-        }
-
-        /* Visualizer bars */
-        .visualizer-bar {
-            width: 4px;
-            background: linear-gradient(to top, #ffa500, #ff8c00, #ffd700);
-            border-radius: 2px;
-            animation: visualizerBounce 0.5s ease-in-out infinite;
-            animation-delay: calc(var(--bar-index) * 0.1s);
-        }
-
-        .visualizer-bar:nth-child(1) { --bar-index: 0; }
-        .visualizer-bar:nth-child(2) { --bar-index: 1; }
-        .visualizer-bar:nth-child(3) { --bar-index: 2; }
-        .visualizer-bar:nth-child(4) { --bar-index: 3; }
-        .visualizer-bar:nth-child(5) { --bar-index: 4; }
-        .visualizer-bar:nth-child(6) { --bar-index: 5; }
-        .visualizer-bar:nth-child(7) { --bar-index: 6; }
-        .visualizer-bar:nth-child(8) { --bar-index: 7; }
-        .visualizer-bar:nth-child(9) { --bar-index: 8; }
-        .visualizer-bar:nth-child(10) { --bar-index: 9; }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 1rem;
             }
-
+            
             .nav-links {
                 gap: 1rem;
             }
-
-            .hero {
-                padding: 0 1rem;
-            }
-
-            .hero-content {
-                padding: 2.5rem 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-tagline {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-
+            
             .about-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 3rem;
             }
+            
+            .about-image {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+            }
+        }
 
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
             .music-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
-
-            .testimonial-grid {
-                grid-template-columns: 1fr;
+            
+            .music-card {
+                padding: 2rem;
             }
-
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+            
+            .player-interface {
+                padding: 2rem;
+            }
+            
+            .album-art {
+                width: 200px;
+                height: 200px;
+                font-size: 4rem;
+            }
+            
+            .player-controls {
+                gap: 1rem;
+            }
+            
+            .control-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .play-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            
             .contact-links {
                 flex-direction: column;
                 align-items: center;
             }
+        }
 
-            /* Mobile gestures */
-            .song-card {
-                touch-action: manipulation;
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .song-card:active {
-                transform: scale(0.98);
-            }
-            
-            .btn {
-                touch-action: manipulation;
-                min-height: 48px;
-                min-width: 48px;
-            }
-            
-            .btn:active {
-                transform: scale(0.95);
-            }
-            
-            .contact-link {
-                touch-action: manipulation;
-                min-height: 48px;
-            }
-            
-            .contact-link:active {
-                transform: scale(0.95);
+            .about-image {
+                width: 250px;
+                height: 250px;
+                font-size: 6rem;
             }
         }
 
-        /* Extra small screens */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-content {
-                padding: 2rem 1.5rem;
-            }
+        /* Performance Optimizations */
+        .music-card,
+        .hero-content,
+        .nav-glass,
+        .music-player-section {
+            will-change: transform;
+        }
+
+        /* Enhanced Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .loading {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Scroll Indicators */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.7;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-10px); }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" role="banner">
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-            <div class="logo">🤠 David van Coolwijk</div>
-            <ul class="nav-links">
-                <li><a href="#hero" aria-label="Go to home section">Home</a></li>
-                <li><a href="#music" aria-label="Listen to David's music">Music</a></li>
-                <li><a href="#testimonials" aria-label="Read fan reviews">Reviews</a></li>
-                <li><a href="#about" aria-label="Learn about David">About</a></li>
-                <li><a href="#contact" aria-label="Contact David">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Background Container -->
+    <div class="background-container">
+        <div class="background-gradient"></div>
+        <div class="particles" id="particles"></div>
+    </div>
 
-    <!-- Hero Section with Perfect Centering -->
-    <section class="hero" id="hero" role="main">
-        <div class="hero-content">
-            <h1>Authentic Country Stories</h1>
-            <p class="hero-subtitle">Original Songs • AI Performance • Pure Heart</p>
-            <p class="hero-tagline">Where traditional songwriting meets tomorrow's technology</p>
-            <div class="hero-buttons">
-                <a href="#music" class="btn btn-primary" aria-label="Listen to David's music now">Listen Now</a>
-                <a href="#testimonials" class="btn btn-secondary" aria-label="Read fan testimonials">Fan Reviews</a>
-                <a href="#about" class="btn btn-secondary" aria-label="Learn about David's story">My Story</a>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-glass">
+            <div class="nav-content">
+                <div class="logo">
+                    🤠 <span>David van Coolwijk</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link"><span>Home</span></a></li>
+                    <li><a href="#music" class="nav-link"><span>Music</span></a></li>
+                    <li><a href="#player" class="nav-link"><span>Player</span></a></li>
+                    <li><a href="#about" class="nav-link"><span>About</span></a></li>
+                    <li><a href="#contact" class="nav-link"><span>Contact</span></a></li>
+                </ul>
             </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-element">🎸</div>
+        <div class="hero-content">
+            <h1 class="hero-title">Authentic Country Stories</h1>
+            <p class="hero-subtitle">Original Songs • AI Performance • Pure Heart</p>
+            <p class="hero-description">Where traditional songwriting meets tomorrow's technology, creating timeless melodies that speak to the soul</p>
+            <div class="hero-buttons">
+                <a href="#music" class="btn btn-primary">
+                    🎵 Listen Now
+                </a>
+                <a href="#player" class="btn btn-secondary">
+                    🎸 Music Player
+                </a>
+                <a href="#about" class="btn btn-secondary">
+                    📖 My Story
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <span>↓</span>
         </div>
     </section>
 
     <!-- Music Section -->
-    <section class="section" id="music" role="region" aria-labelledby="music-heading">
-        <h2 id="music-heading">My Music</h2>
+    <section class="section" id="music">
+        <h2 class="section-title">My Music Collection</h2>
         <div class="music-grid">
-            <div class="song-card">
-                <div class="song-title">🎵 "Cowboys and Sad Songs"</div>
-                <p class="song-description">Every cowboy has a story to tell, and mine comes with a melody. A heartfelt tribute to the men who ride the range and the songs that keep them company.</p>
-                <div class="youtube-embed">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/H44Wis5Vd3o" 
+            <div class="music-card">
+                <h3 class="music-card-title">🎵 Cowboys and Sad Songs</h3>
+                <p class="music-card-description">Every cowboy has a story to tell, and mine comes with a melody. A heartfelt tribute to the men who ride the range and the songs that keep them company through the longest nights.</p>
+                <div class="video-container">
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/H44Wis5Vd3o" 
                             title="Cowboys and Sad Songs" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -857,11 +1004,11 @@
                 </div>
             </div>
 
-            <div class="song-card">
-                <div class="song-title">🎵 "When the Prairie Calls Me Home"</div>
-                <p class="song-description">There's something about wide open spaces that calls to the soul. A longing ballad about the pull of home and the land that shapes us.</p>
-                <div class="youtube-embed">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/RabXIVXG0h0" 
+            <div class="music-card">
+                <h3 class="music-card-title">🏔️ When the Prairie Calls Me Home</h3>
+                <p class="music-card-description">There's something about wide open spaces that calls to the soul. A longing ballad about the pull of home and the land that shapes who we become.</p>
+                <div class="video-container">
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/RabXIVXG0h0" 
                             title="When the Prairie Calls Me Home" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -869,11 +1016,11 @@
                 </div>
             </div>
 
-            <div class="song-card">
-                <div class="song-title">🎵 "Where the River Forgets My Name"</div>
-                <p class="song-description">Sometimes we need to go where nobody knows who we used to be. A haunting melody about finding peace in solitude and letting the current wash away our past.</p>
-                <div class="youtube-embed">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/tGuSWcjI4P8" 
+            <div class="music-card">
+                <h3 class="music-card-title">🏞️ Where the River Forgets My Name</h3>
+                <p class="music-card-description">Sometimes we need to go where nobody knows who we used to be. A haunting melody about finding peace in solitude and letting the current wash away our past.</p>
+                <div class="video-container">
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/tGuSWcjI4P8" 
                             title="Where the River Forgets My Name" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -881,11 +1028,11 @@
                 </div>
             </div>
 
-            <div class="song-card">
-                <div class="song-title">🎵 "Dancing Through My Heart"</div>
-                <p class="song-description">Love has a way of moving through you like music itself. A tender ballad about how the right person can make your whole world feel like a slow dance under the stars.</p>
-                <div class="youtube-embed">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/9mj488Ieydk" 
+            <div class="music-card">
+                <h3 class="music-card-title">💃 Dancing Through My Heart</h3>
+                <p class="music-card-description">Love has a way of moving through you like music itself. A tender ballad about how the right person can make your whole world feel like a slow dance under the stars.</p>
+                <div class="video-container">
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/9mj488Ieydk" 
                             title="Dancing Through My Heart" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -893,11 +1040,11 @@
                 </div>
             </div>
 
-            <div class="song-card">
-                <div class="song-title">🎵 "A Cowboy's Life"</div>
-                <p class="song-description">Wide open ranges, long days in the saddle, and the freedom that comes with living on your own terms. A tribute to the timeless spirit of the American cowboy.</p>
-                <div class="youtube-embed">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/oNijpaTiqts" 
+            <div class="music-card">
+                <h3 class="music-card-title">🐎 A Cowboy's Life</h3>
+                <p class="music-card-description">Wide open ranges, long days in the saddle, and the freedom that comes with living on your own terms. A tribute to the timeless spirit of the American cowboy.</p>
+                <div class="video-container">
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/oNijpaTiqts" 
                             title="A Cowboy's Life" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -905,11 +1052,11 @@
                 </div>
             </div>
 
-            <div class="song-card">
-                <div class="song-title">🎵 "My Truck Left Me and Took My Dog"</div>
-                <p class="song-description">When everything goes wrong, it really goes wrong. A tongue-in-cheek country anthem about life's cruel sense of humor and the things we hold dear.</p>
-                <div class="youtube-embed">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/ajzLwM2qdac" 
+            <div class="music-card">
+                <h3 class="music-card-title">🚛 My Truck Left Me and Took My Dog</h3>
+                <p class="music-card-description">When everything goes wrong, it really goes wrong. A tongue-in-cheek country anthem about life's cruel sense of humor and the things we hold most dear.</p>
+                <div class="video-container">
+                    <iframe width="100%" height="240" src="https://www.youtube.com/embed/ajzLwM2qdac" 
                             title="My Truck Left Me and Took My Dog" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -919,298 +1066,81 @@
         </div>
     </section>
 
-    <!-- Interactive Music Player -->
-    <div style="background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(139, 69, 19, 0.1)); margin: 4rem auto; padding: 3rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.2); max-width: 1200px; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%); animation: musicGlow 10s ease-in-out infinite;"></div>
+    <!-- Music Player Section -->
+    <section class="music-player-section" id="player">
+        <h2 class="section-title">Interactive Music Player</h2>
         
-        <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #ffa500, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem; position: relative; z-index: 2; text-align: center;">🎸 David's Music Player 🎵</h2>
-        
-        <!-- Upload Section for David's Music (Admin Only) -->
-        <div id="adminUploadSection" style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 165, 0, 0.2); position: relative; z-index: 2; text-align: center; display: none;">
-            <h3 style="color: #ffa500; margin-bottom: 1rem; font-size: 1.3rem;">🎼 Add Your Latest Tracks 🎼</h3>
-            <p style="color: #d4a574; margin-bottom: 1.5rem;">Upload your MP3 recordings to share with fans!</p>
-            
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; align-items: center;">
-                <label for="audioUpload" style="background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; display: inline-block;">
-                    🎵 Add New Songs
-                    <input type="file" id="audioUpload" accept="audio/mp3,audio/mpeg,audio/wav,audio/ogg" multiple onchange="uploadFiles(this.files)" style="display: none;">
-                </label>
-                
-                <button onclick="userTracks.forEach(track=>{if(track.audioUrl)URL.revokeObjectURL(track.audioUrl);});userTracks=[];playlist=[...defaultPlaylist];currentTrack=0;createPlaylist();alert('🗑️ All uploaded tracks removed');" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">
-                    🗑️ Remove Added Songs
-                </button>
-                
-                <button onclick="document.getElementById('adminLoginSection').style.display='block';document.getElementById('adminUploadSection').style.display='none';document.getElementById('adminPassword').value='';alert('👋 Logged out');" style="background: rgba(255, 255, 255, 0.1); color: #ff6b6b; border: 1px solid rgba(255, 107, 107, 0.3); padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">
-                    🚪 Logout
-                </button>
-            </div>
-            
-            <div id="uploadStatus" style="margin-top: 1rem; color: #a0a0a0; font-size: 0.9rem; min-height: 20px;"></div>
-            
-            <!-- Test Section -->
-            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.1);">
-                <h4 style="color: #ffa500; margin-bottom: 1rem; text-align: center;">🧪 Test Functions</h4>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="if(typeof createPlaylist === 'function'){createPlaylist();alert('✅ Playlist refreshed!');}else{alert('❌ Music player not loaded yet. Please refresh the page.');}" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">🔄 Refresh Playlist</button>
-                    <button onclick="if(typeof playlist !== 'undefined'){console.log('Current playlist:', playlist); console.log('User tracks:', userTracks); alert('Check console (F12) for playlist data - Found ' + playlist.length + ' tracks');}else{alert('❌ Music player not loaded yet.');}" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">📊 Debug Info</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Admin Login Section -->
-        <div id="adminLoginSection" style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 165, 0, 0.2); position: relative; z-index: 2; text-align: center;">
-            <h3 style="color: #ffa500; margin-bottom: 1rem; font-size: 1.3rem;">🔐 Artist Login 🔐</h3>
-            <p style="color: #d4a574; margin-bottom: 1.5rem;">Enter the admin password to upload new tracks</p>
-            
-            <div style="max-width: 300px; margin: 0 auto;">
-                <input type="password" id="adminPassword" placeholder="Enter admin password" onkeypress="if(event.key==='Enter'){if(this.value==='cowboy2024'){document.getElementById('adminLoginSection').style.display='none';document.getElementById('adminUploadSection').style.display='block';alert('✅ Welcome David!');this.value='';}else{alert('❌ Wrong password. Try: cowboy2024');this.value='';}}" style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem; margin-bottom: 1rem; text-align: center;">
-                
-                <button onclick="if(document.getElementById('adminPassword').value==='cowboy2024'){document.getElementById('adminLoginSection').style.display='none';document.getElementById('adminUploadSection').style.display='block';alert('✅ Welcome David!');document.getElementById('adminPassword').value='';}else{alert('❌ Wrong password. Try: cowboy2024');document.getElementById('adminPassword').value='';}" style="background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; border: none; width: 100%;">
-                    🎸 Login as David
-                </button>
-            </div>
-            
-            <div id="loginStatus" style="margin-top: 1rem; color: #a0a0a0; font-size: 0.9rem; min-height: 20px;"></div>
-        </div>
-
-        <!-- Music Player Interface -->
-        <div id="musicPlayer" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(15px); border-radius: 25px; padding: 2rem; border: 1px solid rgba(255, 165, 0, 0.3); position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
-            
-            <!-- Hidden Audio Element -->
+        <div class="player-interface">
             <audio id="audioPlayer" preload="metadata" style="display: none;"></audio>
             
-            <!-- Now Playing Display -->
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <div id="albumArt" style="width: 200px; height: 200px; margin: 0 auto 1.5rem; border-radius: 20px; background: linear-gradient(45deg, #ffa500, #ff8c00, #ffd700); display: flex; align-items: center; justify-content: center; font-size: 4rem; box-shadow: 0 15px 35px rgba(255, 165, 0, 0.4); transition: all 0.3s ease; position: relative; overflow: hidden;">
-                    <div style="position: absolute; inset: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent); transform: translateX(-100%); animation: vinylShine 3s ease-in-out infinite;"></div>
-                    🤠
-                </div>
-                <h3 id="currentSong" style="color: #ffa500; font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: bold;">Cowboys and Sad Songs</h3>
-                <p id="currentArtist" style="color: #d4a574; font-size: 1.1rem;">David van Coolwijk</p>
+            <div class="album-art-container">
+                <div class="album-art" id="albumArt">🤠</div>
+            </div>
+            
+            <div class="track-info">
+                <div class="track-title" id="currentSong">Cowboys and Sad Songs</div>
+                <div class="track-artist" id="currentArtist">David van Coolwijk</div>
             </div>
             
             <!-- Progress Bar -->
             <div style="margin-bottom: 2rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: #a0a0a0; font-size: 0.9rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
                     <span id="currentTime">0:00</span>
                     <span id="totalTime">3:30</span>
                 </div>
-                <div id="progressContainer" style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; cursor: pointer; position: relative; overflow: hidden;">
-                    <div id="progressBar" style="height: 100%; background: linear-gradient(90deg, #ffa500, #ff8c00); border-radius: 10px; width: 0%; transition: width 0.1s ease; position: relative;">
+                <div id="progressContainer" style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; cursor: pointer; position: relative; overflow: hidden;">
+                    <div id="progressBar" style="height: 100%; background: linear-gradient(90deg, var(--primary-orange), var(--secondary-gold)); border-radius: 10px; width: 0%; transition: width 0.1s ease; position: relative;">
                         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); animation: progressShine 2s ease-in-out infinite;"></div>
                     </div>
                 </div>
             </div>
             
-            <!-- Control Buttons -->
-            <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
-                <button id="shuffleBtn" style="background: none; border: none; color: #a0a0a0; font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; padding: 10px; border-radius: 50%;" title="Shuffle">🔀</button>
-                
-                <button id="prevBtn" style="background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); color: #ffa500; font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease; padding: 12px 16px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;" title="Previous">⏮️</button>
-                
-                <button onclick="simpleTogglePlay()" style="background: linear-gradient(45deg, #ffa500, #ff8c00); border: none; color: #000; font-size: 2rem; cursor: pointer; transition: all 0.3s ease; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(255, 165, 0, 0.4);" title="Play/Pause" id="playPauseBtn">▶️</button>
-                
-                <button id="nextBtn" style="background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); color: #ffa500; font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease; padding: 12px 16px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;" title="Next">⏭️</button>
-                
-                <button id="repeatBtn" style="background: none; border: none; color: #a0a0a0; font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; padding: 10px; border-radius: 50%;" title="Repeat">🔁</button>
+            <div class="player-controls">
+                <button class="control-btn" id="prevBtn" title="Previous">⏮️</button>
+                <button class="control-btn play-btn" onclick="togglePlay()" title="Play/Pause" id="playPauseBtn">▶️</button>
+                <button class="control-btn" id="nextBtn" title="Next">⏭️</button>
             </div>
             
             <!-- Volume Control -->
             <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <span style="color: #a0a0a0; font-size: 1.2rem;">🔊</span>
-                <div id="volumeContainer" style="width: 150px; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; cursor: pointer; position: relative;">
-                    <div id="volumeBar" style="height: 100%; background: linear-gradient(90deg, #ffa500, #ff8c00); border-radius: 10px; width: 70%; transition: width 0.1s ease;"></div>
+                <span style="color: var(--text-secondary); font-size: 1.2rem;">🔊</span>
+                <div id="volumeContainer" style="width: 150px; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; cursor: pointer; position: relative;">
+                    <div id="volumeBar" style="height: 100%; background: linear-gradient(90deg, var(--primary-orange), var(--secondary-gold)); border-radius: 10px; width: 70%; transition: width 0.1s ease;"></div>
                 </div>
-                <span id="volumeText" style="color: #d4a574; font-size: 0.9rem; min-width: 30px;">70%</span>
+                <span id="volumeText" style="color: var(--text-secondary); font-size: 0.9rem; min-width: 30px;">70%</span>
+            </div>
+            
+            <!-- Upload Section -->
+            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
+                <h4 style="color: var(--primary-orange); margin-bottom: 1rem; font-size: 1.2rem;">🎼 Upload Your Music 🎼</h4>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Add your own MP3 files to the player</p>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <label for="audioUpload" class="btn btn-primary" style="cursor: pointer;">
+                        🎵 Upload MP3
+                        <input type="file" id="audioUpload" accept="audio/mp3,audio/mpeg,audio/wav,audio/ogg" multiple style="display: none;">
+                    </label>
+                    <button onclick="clearTracks()" class="btn btn-secondary">
+                        🗑️ Clear All
+                    </button>
+                </div>
+                
+                <div id="uploadStatus" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem; min-height: 20px;"></div>
             </div>
             
             <!-- Playlist -->
-            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 1.5rem; border: 1px solid rgba(255, 165, 0, 0.1);">
-                <h4 style="color: #ffa500; margin-bottom: 1rem; text-align: center; font-size: 1.2rem;">🎵 Playlist 🎵</h4>
-                <div id="playlist" style="max-height: 250px; overflow-y: auto;">
+            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h4 style="color: var(--primary-orange); margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem;">🎵 Playlist 🎵</h4>
+                <div id="playlist" style="max-height: 300px; overflow-y: auto;">
                     <!-- Playlist items will be populated by JavaScript -->
                 </div>
             </div>
         </div>
-        
-        <!-- Audio Visualizer -->
-        <div style="text-align: center; margin-top: 2rem; position: relative; z-index: 2;">
-            <div id="visualizer" style="display: flex; justify-content: center; align-items: end; gap: 3px; height: 60px; margin: 0 auto; max-width: 400px;">
-                <!-- Visualizer bars will be created by JavaScript -->
-            </div>
-        </div>
-    </div>
+    </section>
 
-    <!-- Floating Mini Player -->
-    <div id="miniPlayer" style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(20px); border-radius: 15px; padding: 1rem; border: 1px solid rgba(255, 165, 0, 0.3); z-index: 1000; transform: translateX(400px); transition: all 0.3s ease; max-width: 300px; display: none;">
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #ffa500, #ff8c00); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🤠</div>
-            <div style="flex: 1; min-width: 0;">
-                <div id="miniSongTitle" style="color: #ffa500; font-weight: bold; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Cowboys and Sad Songs</div>
-                <div id="miniArtist" style="color: #d4a574; font-size: 0.8rem;">David van Coolwijk</div>
-            </div>
-                <button onclick="simpleTogglePlay()" style="background: linear-gradient(45deg, #ffa500, #ff8c00); border: none; color: #000; font-size: 1rem; cursor: pointer; padding: 8px; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;" id="miniPlayPause">▶️</button>
-        </div>
-    </div>
-    <div style="background: linear-gradient(45deg, rgba(255, 165, 0, 0.1), rgba(139, 69, 19, 0.1)); margin: 4rem auto; padding: 3rem 2rem; border-radius: 25px; border: 1px solid rgba(255, 165, 0, 0.2); max-width: 1200px; text-align: center; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); animation: wisdomGlow 8s ease-in-out infinite;"></div>
-        
-        <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #ffa500, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem; position: relative; z-index: 2;">🌟 Daily Country Wisdom 🌟</h2>
-        
-        <div id="wisdomCard" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); position: relative; z-index: 2; max-width: 700px; margin: 0 auto; transition: all 0.3s ease;">
-            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">🤠</div>
-            <p id="dailyQuote" style="font-size: 1.4rem; font-style: italic; color: #d4a574; line-height: 1.6; margin-bottom: 1.5rem;">"Life's like a country song - it's got its ups and downs, but the melody always finds its way home."</p>
-            <div style="color: #ffa500; font-weight: bold; font-size: 1.1rem;">- David van Coolwijk</div>
-        </div>
-        
-        <button onclick="getNewWisdom()" style="margin-top: 2rem; padding: 12px 25px; background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; position: relative; z-index: 2;">Get New Wisdom ✨</button>
-    </div>
-    
-    <!-- Fan Reviews Section with Interactive Form -->
-    <div style="background: rgba(255, 165, 0, 0.05); margin: 4rem auto; padding: 4rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.1); max-width: 1200px;" id="testimonials">
-        <h2 style="font-size: 3rem !important; text-align: center !important; margin: 0 auto 3rem auto !important; background: linear-gradient(45deg, #ffa500, #ffd700) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; width: 100% !important; display: block !important; text-align: center !important;">🎵 Fan Reviews 🎵</h2>
-        
-        <!-- Add Review Form -->
-        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 25px; padding: 3rem 2rem; margin-bottom: 4rem; border: 1px solid rgba(255, 165, 0, 0.2); max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 4rem;">
-            <h3 style="color: #ffa500; text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">🤠 Share Your Review!</h3>
-            <form id="reviewForm">
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Your Name:</label>
-                    <input type="text" id="reviewerName" required style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem;" placeholder="Enter your name">
-                </div>
-                
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Location (optional):</label>
-                    <input type="text" id="reviewerLocation" style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem;" placeholder="e.g. Nashville, TN">
-                </div>
-                
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Star Rating:</label>
-                    <div style="text-align: center; margin-bottom: 1rem;">
-                        <div id="starRating" style="font-size: 2rem; cursor: pointer;">
-                            <span class="star" data-rating="1" style="color: #666; transition: color 0.2s;">★</span>
-                            <span class="star" data-rating="2" style="color: #666; transition: color 0.2s;">★</span>
-                            <span class="star" data-rating="3" style="color: #666; transition: color 0.2s;">★</span>
-                            <span class="star" data-rating="4" style="color: #666; transition: color 0.2s;">★</span>
-                            <span class="star" data-rating="5" style="color: #666; transition: color 0.2s;">★</span>
-                        </div>
-                        <div id="ratingText" style="color: #a0a0a0; margin-top: 0.5rem;">Click stars to rate!</div>
-                    </div>
-                </div>
-                
-                <div style="margin-bottom: 2rem;">
-                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Your Review:</label>
-                    <textarea id="reviewText" required rows="4" style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem; resize: vertical;" placeholder="Share what you love about David's music..."></textarea>
-                </div>
-                
-                <button type="submit" style="width: 100%; padding: 15px; background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; border: none; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
-                    🎸 Submit Review ✨
-                </button>
-            </form>
-        </div>
-
-        <!-- Reviews Display -->
-        <div id="reviewsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-            <!-- Default Reviews -->
-            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
-                <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-                <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"David's music takes me straight back to the prairie. His storytelling is authentic and his voice has that raw, honest quality that country music needs."</p>
-                <div style="color: #ffa500; font-weight: bold;">Sarah Mitchell</div>
-                <div style="color: #a0a0a0; font-size: 0.9rem;">Nashville, TN</div>
-            </div>
-
-            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
-                <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-                <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"'Cowboys and Sad Songs' is pure poetry. David captures the heart of country music while bringing something fresh to the genre. Absolutely incredible!"</p>
-                <div style="color: #ffa500; font-weight: bold;">Jake Thompson</div>
-                <div style="color: #a0a0a0; font-size: 0.9rem;">Austin, TX</div>
-            </div>
-
-            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
-                <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-                <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"The blend of traditional songwriting with modern technology is genius. David's music feels both timeless and innovative. Can't stop listening!"</p>
-                <div style="color: #ffa500; font-weight: bold;">Emma Rodriguez</div>
-                <div style="color: #a0a0a0; font-size: 0.9rem;">Denver, CO</div>
-            </div>
-
-            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
-                <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-                <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"'Where the River Forgets My Name' moved me to tears. David has a gift for capturing life's most profound moments in his music."</p>
-                <div style="color: #ffa500; font-weight: bold;">Michael O'Brien</div>
-                <div style="color: #a0a0a0; font-size: 0.9rem;">Chicago, IL</div>
-            </div>
-        </div>
-        
-        <!-- Review Stats -->
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.03); border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
-            <h4 style="color: #ffa500; margin-bottom: 1rem; font-size: 1.3rem;">📊 Review Statistics</h4>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <div style="text-align: center;">
-                    <div id="totalReviews" style="font-size: 2rem; color: #ffd700; font-weight: bold;">4</div>
-                    <div style="color: #d4a574;">Total Reviews</div>
-                </div>
-                <div style="text-align: center;">
-                    <div id="averageRating" style="font-size: 2rem; color: #ffd700; font-weight: bold;">5.0</div>
-                    <div style="color: #d4a574;">Average Rating</div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; color: #ffd700;">★★★★★</div>
-                    <div style="color: #d4a574;">Fan Favorite</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Smart Home Integration Section -->
-    <div style="background: rgba(255, 165, 0, 0.05); margin: 4rem auto; padding: 4rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.1); max-width: 1200px; text-align: center;">
-        <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #ffa500, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem;">🏠 Smart Home Integration</h2>
-        
-        <p style="color: #d4a574; font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Connect with David's music through your smart devices! Try these voice commands:</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🎵</div>
-                <h3 style="color: #ffa500; margin-bottom: 1rem;">Alexa Commands</h3>
-                <div style="color: #d4a574; line-height: 1.6;">
-                    "Alexa, play David van Coolwijk"<br>
-                    "Alexa, play Cowboys and Sad Songs"<br>
-                    "Alexa, shuffle David's playlist"
-                </div>
-            </div>
-            
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🎤</div>
-                <h3 style="color: #ffa500; margin-bottom: 1rem;">Google Assistant</h3>
-                <div style="color: #d4a574; line-height: 1.6;">
-                    "Hey Google, play David van Coolwijk on Spotify"<br>
-                    "Hey Google, play country music by David"<br>
-                    "Hey Google, what's David's latest song?"
-                </div>
-            </div>
-            
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
-                <h3 style="color: #ffa500; margin-bottom: 1rem;">Siri Commands</h3>
-                <div style="color: #d4a574; line-height: 1.6;">
-                    "Hey Siri, play David van Coolwijk"<br>
-                    "Hey Siri, play When the Prairie Calls Me Home"<br>
-                    "Hey Siri, add David to my country playlist"
-                </div>
-            </div>
-        </div>
-        
-        <div style="background: linear-gradient(45deg, rgba(255, 165, 0, 0.1), rgba(255, 215, 0, 0.1)); padding: 2rem; border-radius: 20px; max-width: 600px; margin: 0 auto;">
-            <p style="color: #ffa500; font-weight: bold; margin-bottom: 1rem;">🔗 Quick Setup Links:</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://open.spotify.com/artist/5wBCMjrqHOjsXi2AX1GW64" target="_blank" style="padding: 10px 20px; background: rgba(255, 255, 255, 0.1); color: #ffa500; text-decoration: none; border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.2); transition: all 0.3s ease;">Spotify Link</a>
-                <a href="https://www.youtube.com/@captainfrasca" target="_blank" style="padding: 10px 20px; background: rgba(255, 255, 255, 0.1); color: #ffa500; text-decoration: none; border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.2); transition: all 0.3s ease;">YouTube Music</a>
-            </div>
-        </div>
-    </div>
-    
     <!-- About Section -->
     <section class="section" id="about">
-        <h2>About David</h2>
+        <h2 class="section-title">About David</h2>
         <div class="about-content">
             <div class="about-image">🎸</div>
             <div class="about-text">
@@ -1222,548 +1152,177 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <h2>Get In Touch</h2>
-        <p>Connect with me and stay updated on new releases, performances, and behind-the-scenes content.</p>
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Connect with me and stay updated on new releases, performances, and behind-the-scenes content</p>
         <div class="contact-links">
-            <a href="mailto:davidvancoolwijk@gmail.com" class="contact-link">📧 Email Me</a>
-            <a href="https://www.youtube.com/@captainfrasca" class="contact-link" target="_blank">🎥 YouTube</a>
-            <a href="https://open.spotify.com/artist/5wBCMjrqHOjsXi2AX1GW64" class="contact-link" target="_blank">🎵 Spotify</a>
-            <a href="https://www.tiktok.com/@davidvancoolwijk" class="contact-link" target="_blank">🎬 TikTok</a>
-            <a href="https://soundcloud.com/david-van-coolwijk-801675736" class="contact-link" target="_blank">🎧 SoundCloud</a>
+            <a href="mailto:davidvancoolwijk@gmail.com" class="contact-link">
+                📧 <span>Email Me</span>
+            </a>
+            <a href="https://www.youtube.com/@captainfrasca" class="contact-link" target="_blank">
+                🎥 <span>YouTube</span>
+            </a>
+            <a href="https://open.spotify.com/artist/5wBCMjrqHOjsXi2AX1GW64" class="contact-link" target="_blank">
+                🎵 <span>Spotify</span>
+            </a>
+            <a href="https://www.tiktok.com/@davidvancoolwijk" class="contact-link" target="_blank">
+                🎬 <span>TikTok</span>
+            </a>
+            <a href="https://soundcloud.com/david-van-coolwijk-801675736" class="contact-link" target="_blank">
+                🎧 <span>SoundCloud</span>
+            </a>
         </div>
     </section>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
-            } else {
-                header.style.background = 'rgba(10, 10, 10, 0.9)';
+        // ===== ADVANCED PARTICLE SYSTEM =====
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth > 768 ? 50 : 25;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
             }
-        });
-
-        // Enhanced mobile performance
-        document.addEventListener('touchstart', function() {}, {passive: true});
-        document.addEventListener('touchmove', function() {}, {passive: true});
-
-        // Daily Country Wisdom Feature
-        const countryWisdom = [
-            "Life's like a country song - it's got its ups and downs, but the melody always finds its way home.",
-            "Sometimes you gotta walk through the storm to appreciate the sunshine on the other side.",
-            "A cowboy's heart is measured not by the miles he's traveled, but by the stories he's gathered along the way.",
-            "The best country songs are written with three chords and the truth.",
-            "Home isn't a place on the map, it's the feeling you get when you hear that first guitar strum.",
-            "Every sunset is a reminder that even the longest days eventually find their peaceful ending.",
-            "The road less traveled isn't always easy, but it's where you'll find the best stories.",
-            "A good country song can heal a broken heart or break a healing one.",
-            "Sometimes the strongest cowboys are the ones who aren't afraid to cry.",
-            "The prairie teaches us that sometimes you need wide open spaces to find yourself."
-        ];
-
-        function getNewWisdom() {
-            const randomQuote = countryWisdom[Math.floor(Math.random() * countryWisdom.length)];
-            const quoteElement = document.getElementById('dailyQuote');
-            const card = document.getElementById('wisdomCard');
-            
-            // Add animation effect
-            card.style.transform = 'scale(0.95)';
-            card.style.opacity = '0.7';
-            
-            setTimeout(() => {
-                quoteElement.textContent = `"${randomQuote}"`;
-                card.style.transform = 'scale(1)';
-                card.style.opacity = '1';
-            }, 200);
         }
 
-        // Review System Variables
-        let currentRating = 0;
-        let userReviews = [];
-
-        // Star Rating System
-        function initializeStarRating() {
-            const stars = document.querySelectorAll('.star');
-            const ratingText = document.getElementById('ratingText');
-            
-            stars.forEach((star, index) => {
-                star.addEventListener('mouseover', () => {
-                    highlightStars(index + 1);
-                    updateRatingText(index + 1, true);
-                });
-                
-                star.addEventListener('mouseout', () => {
-                    highlightStars(currentRating);
-                    updateRatingText(currentRating, false);
-                });
-                
-                star.addEventListener('click', () => {
-                    currentRating = index + 1;
-                    highlightStars(currentRating);
-                    updateRatingText(currentRating, false);
-                });
-            });
-        }
-
-        function highlightStars(rating) {
-            const stars = document.querySelectorAll('.star');
-            stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.style.color = '#ffd700';
-                    star.style.textShadow = '0 0 10px rgba(255, 215, 0, 0.8)';
-                } else {
-                    star.style.color = '#666';
-                    star.style.textShadow = 'none';
-                }
-            });
-        }
-
-        function updateRatingText(rating, isHover) {
-            const ratingText = document.getElementById('ratingText');
-            const messages = {
-                1: isHover ? "⭐ Poor" : currentRating === 1 ? "⭐ Poor (Selected)" : "Click stars to rate!",
-                2: isHover ? "⭐⭐ Fair" : currentRating === 2 ? "⭐⭐ Fair (Selected)" : "Click stars to rate!",
-                3: isHover ? "⭐⭐⭐ Good" : currentRating === 3 ? "⭐⭐⭐ Good (Selected)" : "Click stars to rate!",
-                4: isHover ? "⭐⭐⭐⭐ Very Good" : currentRating === 4 ? "⭐⭐⭐⭐ Very Good (Selected)" : "Click stars to rate!",
-                5: isHover ? "⭐⭐⭐⭐⭐ Excellent" : currentRating === 5 ? "⭐⭐⭐⭐⭐ Excellent (Selected)" : "Click stars to rate!"
-            };
-            
-            ratingText.textContent = rating > 0 ? messages[rating] : "Click stars to rate!";
-            ratingText.style.color = rating > 0 ? '#ffa500' : '#a0a0a0';
-        }
-
-        // Review Form Submission
-        function setupReviewForm() {
-            const form = document.getElementById('reviewForm');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const name = document.getElementById('reviewerName').value.trim();
-                const location = document.getElementById('reviewerLocation').value.trim();
-                const reviewText = document.getElementById('reviewText').value.trim();
-                
-                if (!name || !reviewText || currentRating === 0) {
-                    alert('🤠 Hold on there, partner! Please fill in your name, rating, and review before submitting.');
-                    return;
-                }
-                
-                const newReview = {
-                    name: name,
-                    location: location || 'Country Music Fan',
-                    rating: currentRating,
-                    text: reviewText,
-                    date: new Date()
-                };
-                
-                addNewReview(newReview);
-                resetForm();
-                
-                // Show success message
-                showSuccessMessage();
-            });
-        }
-
-        function addNewReview(review) {
-            userReviews.push(review);
-            
-            const reviewsContainer = document.getElementById('reviewsContainer');
-            const reviewCard = createReviewCard(review, true);
-            
-            // Add the new review at the beginning
-            reviewsContainer.insertBefore(reviewCard, reviewsContainer.firstChild);
-            
-            // Update statistics
-            updateReviewStats();
-        }
-
-        function createReviewCard(review, isNew = false) {
-            const reviewCard = document.createElement('div');
-            reviewCard.className = 'review-card';
-            reviewCard.style.cssText = `
-                background: rgba(255, 255, 255, 0.03); 
-                padding: 2rem; 
-                border-radius: 20px; 
-                border: 1px solid rgba(255, 165, 0, 0.1); 
-                text-align: center; 
-                transition: all 0.3s ease; 
-                transform: ${isNew ? 'scale(0.8)' : 'scale(1)'}; 
-                opacity: ${isNew ? '0' : '1'};
-                ${isNew ? 'border-color: rgba(255, 165, 0, 0.4); box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);' : ''}
-            `;
-            
-            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-            
-            reviewCard.innerHTML = `
-                <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">${stars}</div>
-                <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"${review.text}"</p>
-                <div style="color: #ffa500; font-weight: bold;">${review.name}</div>
-                <div style="color: #a0a0a0; font-size: 0.9rem;">${review.location}</div>
-                ${isNew ? '<div style="background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; margin-top: 1rem; display: inline-block;">🆕 NEW REVIEW</div>' : ''}
-            `;
-            
-            if (isNew) {
-                setTimeout(() => {
-                    reviewCard.style.transform = 'scale(1)';
-                    reviewCard.style.opacity = '1';
-                }, 100);
-                
-                setTimeout(() => {
-                    reviewCard.style.borderColor = 'rgba(255, 165, 0, 0.1)';
-                    reviewCard.style.boxShadow = 'none';
-                    const newBadge = reviewCard.querySelector('div:last-child');
-                    if (newBadge && newBadge.textContent.includes('NEW')) {
-                        newBadge.style.opacity = '0';
-                        setTimeout(() => newBadge.remove(), 300);
-                    }
-                }, 3000);
-            }
-            
-            return reviewCard;
-        }
-
-        function updateReviewStats() {
-            const totalReviewsElement = document.getElementById('totalReviews');
-            const averageRatingElement = document.getElementById('averageRating');
-            
-            const totalReviews = 4 + userReviews.length; // 4 default reviews + user reviews
-            let totalRating = 20; // 4 default 5-star reviews
-            
-            userReviews.forEach(review => {
-                totalRating += review.rating;
-            });
-            
-            const averageRating = (totalRating / totalReviews).toFixed(1);
-            
-            totalReviewsElement.textContent = totalReviews;
-            averageRatingElement.textContent = averageRating;
-            
-            // Add a little animation
-            totalReviewsElement.style.transform = 'scale(1.2)';
-            averageRatingElement.style.transform = 'scale(1.2)';
-            
-            setTimeout(() => {
-                totalReviewsElement.style.transform = 'scale(1)';
-                averageRatingElement.style.transform = 'scale(1)';
-            }, 300);
-        }
-
-        function resetForm() {
-            document.getElementById('reviewForm').reset();
-            currentRating = 0;
-            highlightStars(0);
-            updateRatingText(0, false);
-        }
-
-        function showSuccessMessage() {
-            const successMessage = document.createElement('div');
-            successMessage.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: linear-gradient(45deg, #ffa500, #ff8c00);
-                color: #000;
-                padding: 2rem 3rem;
-                border-radius: 20px;
-                font-weight: bold;
-                font-size: 1.2rem;
-                z-index: 10000;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-                text-align: center;
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.8);
-                transition: all 0.3s ease;
-            `;
-            
-            successMessage.innerHTML = `
-                🎉 <strong>Thanks for your review!</strong> 🎉<br>
-                <span style="font-size: 1rem; opacity: 0.8;">Your review has been added to the wall of fame!</span>
-            `;
-            
-            document.body.appendChild(successMessage);
-            
-            setTimeout(() => {
-                successMessage.style.opacity = '1';
-                successMessage.style.transform = 'translate(-50%, -50%) scale(1)';
-            }, 100);
-            
-            setTimeout(() => {
-                successMessage.style.opacity = '0';
-                successMessage.style.transform = 'translate(-50%, -50%) scale(0.8)';
-                setTimeout(() => {
-                    if (successMessage.parentNode) {
-                        successMessage.parentNode.removeChild(successMessage);
-                    }
-                }, 300);
-            }, 3000);
-        }
-
-        // Music Player Variables
+        // ===== MUSIC PLAYER FUNCTIONALITY =====
         let currentTrack = 0;
         let isPlaying = false;
         let volume = 0.7;
-        let isShuffled = false;
-        let isRepeating = false;
         let audioPlayer;
-        let userTracks = [];
-        let isAdminLoggedIn = false;
 
-        // Default Playlist Data (Demo tracks)
         const defaultPlaylist = [
             {
                 title: "Cowboys and Sad Songs",
                 artist: "David van Coolwijk",
                 duration: "3:30",
-                durationSeconds: 210,
                 emoji: "🤠",
-                isDemo: true
+                isDefault: true
             },
             {
                 title: "When the Prairie Calls Me Home",
                 artist: "David van Coolwijk", 
                 duration: "4:15",
-                durationSeconds: 255,
                 emoji: "🏔️",
-                isDemo: true
+                isDefault: true
             },
             {
                 title: "Where the River Forgets My Name",
                 artist: "David van Coolwijk",
-                duration: "3:45", 
-                durationSeconds: 225,
+                duration: "3:45",
                 emoji: "🏞️",
-                isDemo: true
+                isDefault: true
             },
             {
                 title: "Dancing Through My Heart",
                 artist: "David van Coolwijk",
                 duration: "3:20",
-                durationSeconds: 200,
                 emoji: "💃",
-                isDemo: true
+                isDefault: true
             },
             {
                 title: "A Cowboy's Life",
                 artist: "David van Coolwijk",
                 duration: "4:00",
-                durationSeconds: 240,
                 emoji: "🐎",
-                isDemo: true
+                isDefault: true
             },
             {
                 title: "My Truck Left Me and Took My Dog",
                 artist: "David van Coolwijk",
                 duration: "3:10",
-                durationSeconds: 190,
                 emoji: "🚛",
-                isDemo: true
+                isDefault: true
             }
         ];
 
         let playlist = [...defaultPlaylist];
 
-        // Simple file upload function
-        function uploadFiles(files) {
-            console.log('📁 Upload started, files:', files.length);
-            
-            if (!files || files.length === 0) {
-                alert('❌ No files selected');
-                return;
-            }
-            
-            alert(`📁 Processing ${files.length} file(s)...`);
-            
-            Array.from(files).forEach((file, index) => {
-                console.log('Processing file:', file.name);
-                
-                if (!file.type.startsWith('audio/')) {
-                    alert(`⚠️ ${file.name} is not an audio file`);
-                    return;
-                }
-                
-                const reader = new FileReader();
-                
-                reader.onload = function(e) {
-                    try {
-                        console.log('File read successfully:', file.name);
-                        
-                        // Create audio URL
-                        const blob = new Blob([e.target.result], { type: file.type });
-                        const audioUrl = URL.createObjectURL(blob);
-                        
-                        // Create track object
-                        const track = {
-                            title: file.name.replace(/\.[^/.]+$/, ""),
-                            artist: "David van Coolwijk",
-                            duration: "?:??",
-                            durationSeconds: 0,
-                            emoji: "🎸",
-                            audioUrl: audioUrl,
-                            fileName: file.name,
-                            isDemo: false
-                        };
-                        
-                        // Add to tracks
-                        userTracks.push(track);
-                        
-                        // Update playlist
-                        playlist = [...defaultPlaylist, ...userTracks];
-                        createPlaylist();
-                        
-                        console.log('Track added:', track.title);
-                        
-                        // Get duration
-                        const audio = new Audio(audioUrl);
-                        audio.addEventListener('loadedmetadata', () => {
-                            track.duration = formatTime(audio.duration);
-                            track.durationSeconds = Math.floor(audio.duration);
-                            createPlaylist();
-                            console.log('Duration updated:', track.duration);
-                        });
-                        
-                        if (index === files.length - 1) {
-                            alert(`✅ Successfully uploaded ${files.length} track(s)!`);
-                        }
-                        
-                    } catch (error) {
-                        console.error('Error processing file:', error);
-                        alert(`❌ Error processing ${file.name}`);
-                    }
-                };
-                
-                reader.onerror = function() {
-                    console.error('Error reading file:', file.name);
-                    alert(`❌ Error reading ${file.name}`);
-                };
-                
-                reader.readAsArrayBuffer(file);
-            });
-        }
-
         function createPlaylist() {
-            console.log('🎵 Creating playlist...');
-            
             const playlistContainer = document.getElementById('playlist');
-            if (!playlistContainer) {
-                console.error('❌ Playlist container not found');
-                return;
-            }
+            if (!playlistContainer) return;
             
             playlistContainer.innerHTML = '';
             
-            console.log('📝 Playlist has', playlist.length, 'tracks');
-
             playlist.forEach((track, index) => {
                 const playlistItem = document.createElement('div');
-                playlistItem.className = 'playlist-item';
                 playlistItem.style.cssText = `
-                    padding: 0.8rem;
-                    border-radius: 10px;
+                    padding: 1rem;
+                    border-radius: 12px;
                     margin-bottom: 0.5rem;
                     cursor: pointer;
-                    transition: all 0.3s ease;
+                    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     border: 1px solid transparent;
                     display: flex;
                     align-items: center;
                     gap: 1rem;
                     background: rgba(255, 255, 255, 0.03);
+                    backdrop-filter: blur(10px);
                 `;
                 
-                // Show different styling for demo vs real tracks
-                const trackStatus = track.isDemo ? '(YouTube Preview)' : track.audioUrl ? '' : '(Demo)';
+                const status = track.isDefault ? '(Preview)' : '(MP3)';
                 const playIcon = index === currentTrack && isPlaying ? '🎵' : track.audioUrl ? '▶️' : '🎬';
                 
                 playlistItem.innerHTML = `
-                    <div style="font-size: 1.5rem;">${track.emoji}</div>
+                    <div style="font-size: 1.8rem;">${track.emoji}</div>
                     <div style="flex: 1; min-width: 0;">
-                        <div style="color: #ffa500; font-weight: bold; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${track.title}</div>
-                        <div style="color: #d4a574; font-size: 0.8rem;">${track.artist} • ${track.duration} ${trackStatus}</div>
+                        <div style="color: var(--primary-orange); font-weight: 600; font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${track.title}</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">${track.artist} • ${track.duration} ${status}</div>
                     </div>
-                    <div style="color: #a0a0a0; font-size: 1rem;">${playIcon}</div>
+                    <div style="color: var(--text-secondary); font-size: 1.2rem;">${playIcon}</div>
                 `;
 
-                // Make active track stand out
                 if (index === currentTrack) {
-                    playlistItem.style.background = 'rgba(255, 165, 0, 0.2)';
-                    playlistItem.style.borderColor = 'rgba(255, 165, 0, 0.4)';
-                    if (isPlaying) {
-                        playlistItem.style.boxShadow = '0 0 20px rgba(255, 165, 0, 0.3)';
-                    }
+                    playlistItem.style.background = 'rgba(255, 107, 53, 0.1)';
+                    playlistItem.style.borderColor = 'var(--primary-orange)';
+                    playlistItem.style.boxShadow = '0 0 20px rgba(255, 107, 53, 0.3)';
                 }
 
-                // Add click handler with inline onclick
-                playlistItem.onclick = function() {
-                    console.log('🎵 Track clicked:', track.title);
-                    
-                    if (currentTrack !== index) {
-                        currentTrack = index;
-                        console.log('🔄 Loading track:', track.title);
-                        
-                        // Update display
-                        updatePlayerDisplay();
-                        createPlaylist();
-                        
-                        // Load audio if available
-                        if (track.audioUrl && audioPlayer) {
-                            audioPlayer.src = track.audioUrl;
-                            audioPlayer.load();
-                            console.log('🎶 Audio loaded');
-                        }
-                    } else {
-                        // Same track, toggle play/pause
-                        console.log('⏯️ Toggle play/pause');
-                        simpleTogglePlay();
-                    }
-                };
-
+                playlistItem.onclick = () => selectTrack(index);
                 playlistContainer.appendChild(playlistItem);
             });
-            
-            console.log('✅ Playlist created successfully');
         }
 
-        // Simple play/pause toggle
-        function simpleTogglePlay() {
+        function selectTrack(index) {
+            if (currentTrack !== index) {
+                currentTrack = index;
+                updatePlayerDisplay();
+                createPlaylist();
+                
+                const track = playlist[currentTrack];
+                if (track.audioUrl && audioPlayer) {
+                    audioPlayer.src = track.audioUrl;
+                    audioPlayer.load();
+                }
+            } else {
+                togglePlay();
+            }
+        }
+
+        function togglePlay() {
             const track = playlist[currentTrack];
             
             if (!track.audioUrl) {
-                alert('🎬 This is a YouTube preview. Upload MP3 files for real audio!');
+                showNotification('🎬 This is a preview. Upload MP3 files for playback!', 'info');
                 return;
             }
 
-            if (!audioPlayer) {
-                console.error('❌ Audio player not found');
-                return;
-            }
+            if (!audioPlayer) return;
 
             if (isPlaying) {
                 audioPlayer.pause();
                 isPlaying = false;
-                console.log('⏸️ Paused');
             } else {
                 audioPlayer.play().then(() => {
                     isPlaying = true;
-                    console.log('▶️ Playing');
-                    showMiniPlayer();
                 }).catch(e => {
                     console.error('❌ Play error:', e);
-                    alert('❌ Could not play audio');
+                    showNotification('❌ Could not play audio', 'error');
                 });
             }
             
@@ -1774,87 +1333,169 @@
         function updatePlayerDisplay() {
             const track = playlist[currentTrack];
             
-            const currentSong = document.getElementById('currentSong');
-            const currentArtist = document.getElementById('currentArtist');
-            const totalTime = document.getElementById('totalTime');
-            const albumArt = document.getElementById('albumArt');
+            const elements = {
+                currentSong: document.getElementById('currentSong'),
+                currentArtist: document.getElementById('currentArtist'),
+                totalTime: document.getElementById('totalTime'),
+                albumArt: document.getElementById('albumArt')
+            };
             
-            if (currentSong) currentSong.textContent = track.title;
-            if (currentArtist) currentArtist.textContent = track.artist;
-            if (totalTime) totalTime.textContent = track.duration;
-            
-            if (albumArt) {
-                albumArt.innerHTML = `
-                    <div style="position: absolute; inset: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent); transform: translateX(-100%); animation: vinylShine 3s ease-in-out infinite;"></div>
-                    ${track.emoji}
-                `;
-            }
-
-            // Update mini player
-            const miniSongTitle = document.getElementById('miniSongTitle');
-            const miniArtist = document.getElementById('miniArtist');
-            
-            if (miniSongTitle) miniSongTitle.textContent = track.title;
-            if (miniArtist) miniArtist.textContent = track.artist;
+            if (elements.currentSong) elements.currentSong.textContent = track.title;
+            if (elements.currentArtist) elements.currentArtist.textContent = track.artist;
+            if (elements.totalTime) elements.totalTime.textContent = track.duration;
+            if (elements.albumArt) elements.albumArt.textContent = track.emoji;
         }
 
         function updatePlayerControls() {
             const playPauseBtn = document.getElementById('playPauseBtn');
-            const miniPlayPause = document.getElementById('miniPlayPause');
-            
-            const icon = isPlaying ? '⏸️' : '▶️';
-            
-            if (playPauseBtn) playPauseBtn.innerHTML = icon;
-            if (miniPlayPause) miniPlayPause.innerHTML = icon;
+            if (playPauseBtn) {
+                playPauseBtn.textContent = isPlaying ? '⏸️' : '▶️';
+            }
         }
 
         function formatTime(seconds) {
             if (!seconds || isNaN(seconds)) return '0:00';
             const minutes = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
-            return `${minutes}:${secs.toString().padStart(2, '0')}`;
+            return minutes + ':' + secs.toString().padStart(2, '0');
         }
 
-        function showMiniPlayer() {
-            const miniPlayer = document.getElementById('miniPlayer');
-            if (miniPlayer) {
-                miniPlayer.style.display = 'block';
-                setTimeout(() => {
-                    miniPlayer.style.transform = 'translateX(0)';
-                }, 100);
+        // ===== FILE UPLOAD FUNCTIONALITY =====
+        function setupFileUpload() {
+            const uploadInput = document.getElementById('audioUpload');
+            if (!uploadInput) return;
+            
+            uploadInput.addEventListener('change', function(e) {
+                const files = e.target.files;
+                if (!files || files.length === 0) return;
+                
+                uploadFiles(files);
+                e.target.value = '';
+            });
+        }
+
+        function uploadFiles(files) {
+            const statusDiv = document.getElementById('uploadStatus');
+            if (statusDiv) statusDiv.textContent = `🎵 Processing ${files.length} file(s)...`;
+            
+            let processed = 0;
+            
+            Array.from(files).forEach((file) => {
+                if (!file.type.startsWith('audio/')) {
+                    showNotification(`⚠️ ${file.name} is not an audio file`, 'warning');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    try {
+                        const blob = new Blob([e.target.result], { type: file.type });
+                        const audioUrl = URL.createObjectURL(blob);
+                        
+                        const track = {
+                            title: file.name.replace(/\.[^/.]+$/, ""),
+                            artist: "David van Coolwijk",
+                            duration: "?:??",
+                            emoji: "🎸",
+                            audioUrl: audioUrl,
+                            fileName: file.name,
+                            isDefault: false
+                        };
+                        
+                        playlist.push(track);
+                        
+                        const audio = new Audio(audioUrl);
+                        audio.addEventListener('loadedmetadata', () => {
+                            track.duration = formatTime(audio.duration);
+                            createPlaylist();
+                        });
+                        
+                        processed++;
+                        if (processed === files.length) {
+                            createPlaylist();
+                            if (statusDiv) statusDiv.textContent = `✅ Successfully uploaded ${files.length} track(s)!`;
+                            showNotification(`🎵 Added ${files.length} track(s) to playlist!`, 'success');
+                            setTimeout(() => {
+                                if (statusDiv) statusDiv.textContent = '';
+                            }, 3000);
+                        }
+                        
+                    } catch (error) {
+                        console.error('Error processing file:', error);
+                        showNotification(`❌ Error processing ${file.name}`, 'error');
+                    }
+                };
+                
+                reader.onerror = () => {
+                    showNotification(`❌ Error reading ${file.name}`, 'error');
+                };
+                
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        function clearTracks() {
+            if (confirm('🗑️ Remove all uploaded tracks?')) {
+                const userTracks = playlist.filter(track => !track.isDefault);
+                userTracks.forEach(track => {
+                    if (track.audioUrl) {
+                        URL.revokeObjectURL(track.audioUrl);
+                    }
+                });
+                
+                playlist = [...defaultPlaylist];
+                currentTrack = 0;
+                createPlaylist();
+                updatePlayerDisplay();
+                showNotification('✅ All uploaded tracks removed!', 'success');
             }
         }
 
-        function hideMiniPlayer() {
-            const miniPlayer = document.getElementById('miniPlayer');
-            if (miniPlayer) {
-                miniPlayer.style.transform = 'translateX(400px)';
+        // ===== NOTIFICATION SYSTEM =====
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 2rem;
+                background: var(--glass-bg);
+                backdrop-filter: blur(var(--blur-amount));
+                border: 1px solid var(--glass-border);
+                color: var(--text-primary);
+                padding: 1rem 1.5rem;
+                border-radius: 16px;
+                font-weight: 500;
+                z-index: 10000;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                transform: translateX(400px);
+                transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                max-width: 300px;
+            `;
+            
+            if (type === 'success') {
+                notification.style.borderColor = 'var(--primary-orange)';
+                notification.style.boxShadow = '0 10px 40px rgba(255, 107, 53, 0.3)';
+            }
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
                 setTimeout(() => {
-                    miniPlayer.style.display = 'none';
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
                 }, 300);
-            }
+            }, 4000);
         }
 
-        function initializeMusicPlayer() {
-            console.log('🎵 Initializing music player...');
-            
-            // Get audio player element
-            audioPlayer = document.getElementById('audioPlayer');
-            if (!audioPlayer) {
-                console.error('❌ Audio player element not found');
-                return;
-            }
-            
-            // Setup audio events
-            setupAudioEvents();
-            
-            // Create initial playlist
-            createPlaylist();
-            updatePlayerDisplay();
-            
-            console.log('✅ Music player initialized successfully');
-        }
-
+        // ===== AUDIO EVENT HANDLERS =====
         function setupAudioEvents() {
             if (!audioPlayer) return;
             
@@ -1863,43 +1504,135 @@
             });
 
             audioPlayer.addEventListener('timeupdate', () => {
-                // Update progress here if needed
+                const currentTime = document.getElementById('currentTime');
+                const progressBar = document.getElementById('progressBar');
+                
+                if (currentTime) {
+                    currentTime.textContent = formatTime(audioPlayer.currentTime);
+                }
+                
+                if (progressBar && audioPlayer.duration) {
+                    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                    progressBar.style.width = progress + '%';
+                }
             });
 
             audioPlayer.addEventListener('ended', () => {
-                if (isRepeating) {
-                    audioPlayer.currentTime = 0;
-                    audioPlayer.play();
-                } else {
-                    // Next track logic here
-                    console.log('🔄 Track ended');
-                    isPlaying = false;
-                    updatePlayerControls();
-                }
+                isPlaying = false;
+                updatePlayerControls();
+                createPlaylist();
             });
 
             audioPlayer.addEventListener('error', (e) => {
                 console.error('Audio error:', e);
-                alert('❌ Error playing audio file');
+                showNotification('❌ Error playing audio file', 'error');
+            });
+            
+            audioPlayer.volume = volume;
+        }
+
+        // ===== SMOOTH SCROLLING =====
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         }
 
-        // Initialize everything on page load
+        // ===== NAVIGATION SCROLL EFFECT =====
+        function setupNavigationScroll() {
+            const navGlass = document.querySelector('.nav-glass');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navGlass.style.background = 'rgba(255, 255, 255, 0.08)';
+                    navGlass.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+                } else {
+                    navGlass.style.background = 'var(--glass-bg)';
+                    navGlass.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+                }
+            });
+        }
+
+        // ===== INITIALIZATION =====
+        function initializeMusicPlayer() {
+            console.log('🎵 Initializing premium music player...');
+            
+            audioPlayer = document.getElementById('audioPlayer');
+            if (!audioPlayer) {
+                console.error('❌ Audio player element not found');
+                return;
+            }
+            
+            setupAudioEvents();
+            setupFileUpload();
+            createPlaylist();
+            updatePlayerDisplay();
+            
+            console.log('✅ Premium music player initialized!');
+        }
+
+        // ===== PAGE INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🎸 Initializing David\'s website...');
+            console.log('🎸 Initializing David\'s premium website...');
             
-            // Set a random quote on page load
-            getNewWisdom();
-            
-            // Initialize review system
-            initializeStarRating();
-            setupReviewForm();
-            
-            // Initialize music player
+            createParticles();
+            setupSmoothScrolling();
+            setupNavigationScroll();
             initializeMusicPlayer();
             
-            console.log('✅ Website initialization complete!');
+            // Hide scroll indicator after scroll
+            window.addEventListener('scroll', () => {
+                const scrollIndicator = document.querySelector('.scroll-indicator');
+                if (scrollIndicator && window.scrollY > 100) {
+                    scrollIndicator.style.opacity = '0';
+                }
+            });
+            
+            console.log('✅ Premium website initialization complete!');
         });
+
+        // Enhanced mobile performance
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        document.addEventListener('touchmove', function() {}, {passive: true});
+
+        // Window resize handler for particles
+        window.addEventListener('resize', () => {
+            const particlesContainer = document.getElementById('particles');
+            if (particlesContainer) {
+                particlesContainer.innerHTML = '';
+                createParticles();
+            }
+        });
+
+        // Progressive shine animation for progress bar
+        setInterval(() => {
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar && isPlaying) {
+                const shine = progressBar.querySelector('div');
+                if (shine) {
+                    shine.style.animation = 'none';
+                    setTimeout(() => {
+                        shine.style.animation = 'progressShine 2s ease-in-out infinite';
+                    }, 10);
+                }
+            }
+        }, 3000);
     </script>
+
+    <style>
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+    </style>
 </body>
 </html>
