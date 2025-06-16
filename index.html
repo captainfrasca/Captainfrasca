@@ -238,9 +238,9 @@
             text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
         }
 
-        /* Hero Section */
+        /* Hero Section - Perfect Centering */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -250,17 +250,7 @@
                 linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #1a1a1a 100%);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '🤠';
-            position: absolute;
-            font-size: 25rem;
-            opacity: 0.03;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: heroFloat 20s ease-in-out infinite;
+            padding: 0 2rem;
         }
 
         .hero::before {
@@ -272,6 +262,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             animation: heroFloat 12s ease-in-out infinite;
+            pointer-events: none;
         }
 
         @keyframes heroFloat {
@@ -283,7 +274,9 @@
 
         .hero-content {
             max-width: 800px;
-            padding: 3rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 4rem 3rem;
             background: rgba(255, 255, 255, 0.02);
             border-radius: 30px;
             backdrop-filter: blur(10px);
@@ -292,6 +285,8 @@
             position: relative;
             z-index: 10;
             animation: contentFloat 6s ease-in-out infinite;
+            /* Perfect vertical and horizontal centering */
+            transform: translateY(0);
         }
 
         @keyframes contentFloat {
@@ -301,13 +296,15 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             background: linear-gradient(45deg, #ffa500, #ff8c00, #ffd700);
+            background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: none;
             animation: titleShimmer 3s ease-in-out infinite;
+            line-height: 1.2;
         }
 
         @keyframes titleShimmer {
@@ -317,22 +314,28 @@
 
         .hero-subtitle {
             font-size: 1.4rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #d4a574;
+            font-weight: 500;
         }
 
         .hero-tagline {
             font-size: 1.1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             color: #a0a0a0;
             font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2.5rem;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         .btn {
@@ -347,6 +350,7 @@
             display: inline-block;
             position: relative;
             overflow: hidden;
+            min-width: 160px;
         }
 
         .btn-primary {
@@ -478,7 +482,7 @@
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmin(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -594,19 +598,42 @@
             .nav {
                 flex-direction: column;
                 gap: 1rem;
+                padding: 1rem;
             }
 
             .nav-links {
                 gap: 1rem;
             }
 
+            .hero {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 2.5rem 2rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
             }
 
             .about-content {
@@ -655,6 +682,17 @@
                 transform: scale(0.95);
             }
         }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -672,19 +710,8 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Video Background -->
+    <!-- Hero Section with Perfect Centering -->
     <section class="hero" id="hero" role="main">
-        <!-- Video Background -->
-        <div class="video-background">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="hero-video.mp4" type="video/mp4">
-                <source src="hero-video.webm" type="video/webm">
-                <!-- Fallback image for browsers that don't support video -->
-            </video>
-            <!-- Dark overlay for text readability -->
-            <div class="video-overlay"></div>
-        </div>
-        
         <div class="hero-content">
             <h1>Authentic Country Stories</h1>
             <p class="hero-subtitle">Original Songs • AI Performance • Pure Heart</p>
@@ -789,7 +816,9 @@
         
         <button onclick="getNewWisdom()" style="margin-top: 2rem; padding: 12px 25px; background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; position: relative; z-index: 2;">Get New Wisdom ✨</button>
     </div>
-    <div style="background: rgba(255, 165, 0, 0.05); margin: 4rem auto; padding: 4rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.1); max-width: 1200px;">
+    
+    <!-- Testimonials Section -->
+    <div style="background: rgba(255, 165, 0, 0.05); margin: 4rem auto; padding: 4rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.1); max-width: 1200px;" id="testimonials">
         <h2 style="font-size: 3rem !important; text-align: center !important; margin: 0 auto 3rem auto !important; background: linear-gradient(45deg, #ffa500, #ffd700) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; width: 100% !important; display: block !important; text-align: center !important;">What Fans Are Saying</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
             <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease;">
@@ -868,6 +897,8 @@
             </div>
         </div>
     </div>
+    
+    <!-- About Section -->
     <section class="section" id="about">
         <h2>About David</h2>
         <div class="about-content">
@@ -950,54 +981,6 @@
                 card.style.transform = 'scale(1)';
                 card.style.opacity = '1';
             }, 200);
-        }
-
-        // Remix Lab Functions
-        let currentRemixMode = '';
-
-        function startRemix(mode) {
-            currentRemixMode = mode;
-            const player = document.getElementById('remixPlayer');
-            player.style.display = 'block';
-            player.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Update UI based on mode
-            const modeText = {
-                'acoustic': '🎸 Acoustic Remix Mode - Strip down to essentials',
-                'speed': '🎶 Speed Remix Mode - Adjust tempo and pace', 
-                'karaoke': '🎤 Karaoke Mode - Remove vocals for singing'
-            };
-            
-            document.querySelector('#remixPlayer h4').innerHTML = modeText[mode];
-        }
-
-        function createRemix() {
-            const selectedSong = document.getElementById('songSelect').value;
-            if (!selectedSong) {
-                alert('Please select a song first!');
-                return;
-            }
-            
-            const songTitles = {
-                'cowboys': 'Cowboys and Sad Songs',
-                'prairie': 'When the Prairie Calls Me Home',
-                'river': 'Where the River Forgets My Name',
-                'dancing': 'Dancing Through My Heart',
-                'cowboy-life': 'A Cowboy\'s Life',
-                'truck': 'My Truck Left Me and Took My Dog'
-            };
-            
-            const modeDescriptions = {
-                'acoustic': 'acoustic version',
-                'speed': 'tempo-adjusted version',
-                'karaoke': 'instrumental karaoke version'
-            };
-            
-            alert(`🎵 Creating ${modeDescriptions[currentRemixMode]} of "${songTitles[selectedSong]}"!\n\nYour remix is being generated... In a real implementation, this would:\n\n• Process the audio file\n• Apply ${currentRemixMode} effects\n• Generate a downloadable remix\n• Save to your personal remix library\n\nComing soon! 🎸✨`);
-        }
-
-        function closeRemix() {
-            document.getElementById('remixPlayer').style.display = 'none';
         }
 
         // Initialize daily wisdom on page load
