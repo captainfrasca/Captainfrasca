@@ -946,6 +946,15 @@
             </div>
             
             <div id="uploadStatus" style="margin-top: 1rem; color: #a0a0a0; font-size: 0.9rem; min-height: 20px;"></div>
+            
+            <!-- Test Section -->
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.1);">
+                <h4 style="color: #ffa500; margin-bottom: 1rem; text-align: center;">🧪 Test Functions</h4>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button onclick="createPlaylist();alert('✅ Playlist refreshed!');" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">🔄 Refresh Playlist</button>
+                    <button onclick="console.log('Current playlist:', playlist); alert('Check console (F12) for playlist data');" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">📊 Debug Info</button>
+                </div>
+            </div>
         </div>
 
         <!-- Admin Login Section -->
@@ -999,7 +1008,7 @@
                 
                 <button id="prevBtn" style="background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); color: #ffa500; font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease; padding: 12px 16px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;" title="Previous">⏮️</button>
                 
-                <button id="playPauseBtn" style="background: linear-gradient(45deg, #ffa500, #ff8c00); border: none; color: #000; font-size: 2rem; cursor: pointer; transition: all 0.3s ease; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(255, 165, 0, 0.4);" title="Play/Pause">▶️</button>
+                <button onclick="simpleTogglePlay()" style="background: linear-gradient(45deg, #ffa500, #ff8c00); border: none; color: #000; font-size: 2rem; cursor: pointer; transition: all 0.3s ease; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(255, 165, 0, 0.4);" title="Play/Pause" id="playPauseBtn">▶️</button>
                 
                 <button id="nextBtn" style="background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); color: #ffa500; font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease; padding: 12px 16px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;" title="Next">⏭️</button>
                 
@@ -1040,7 +1049,7 @@
                 <div id="miniSongTitle" style="color: #ffa500; font-weight: bold; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Cowboys and Sad Songs</div>
                 <div id="miniArtist" style="color: #d4a574; font-size: 0.8rem;">David van Coolwijk</div>
             </div>
-            <button id="miniPlayPause" style="background: linear-gradient(45deg, #ffa500, #ff8c00); border: none; color: #000; font-size: 1rem; cursor: pointer; padding: 8px; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">▶️</button>
+                <button onclick="simpleTogglePlay()" style="background: linear-gradient(45deg, #ffa500, #ff8c00); border: none; color: #000; font-size: 1rem; cursor: pointer; padding: 8px; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;" id="miniPlayPause">▶️</button>
         </div>
     </div>
     <div style="background: linear-gradient(45deg, rgba(255, 165, 0, 0.1), rgba(139, 69, 19, 0.1)); margin: 4rem auto; padding: 3rem 2rem; border-radius: 25px; border: 1px solid rgba(255, 165, 0, 0.2); max-width: 1200px; text-align: center; position: relative; overflow: hidden;">
