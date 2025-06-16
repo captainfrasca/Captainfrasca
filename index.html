@@ -951,8 +951,8 @@
             <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: 1px solid rgba(255, 165, 0, 0.1);">
                 <h4 style="color: #ffa500; margin-bottom: 1rem; text-align: center;">🧪 Test Functions</h4>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="createPlaylist();alert('✅ Playlist refreshed!');" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">🔄 Refresh Playlist</button>
-                    <button onclick="console.log('Current playlist:', playlist); alert('Check console (F12) for playlist data');" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">📊 Debug Info</button>
+                    <button onclick="if(typeof createPlaylist === 'function'){createPlaylist();alert('✅ Playlist refreshed!');}else{alert('❌ Music player not loaded yet. Please refresh the page.');}" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">🔄 Refresh Playlist</button>
+                    <button onclick="if(typeof playlist !== 'undefined'){console.log('Current playlist:', playlist); console.log('User tracks:', userTracks); alert('Check console (F12) for playlist data - Found ' + playlist.length + ' tracks');}else{alert('❌ Music player not loaded yet.');}" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 8px 16px; border-radius: 15px; cursor: pointer; font-size: 0.9rem;">📊 Debug Info</button>
                 </div>
             </div>
         </div>
@@ -1514,14 +1514,391 @@
             }, 3000);
         }
 
-        // Initialize daily wisdom on page load
+        // Music Player Variables
+        let currentTrack = 0;
+        let isPlaying = false;
+        let volume = 0.7;
+        let isShuffled = false;
+        let isRepeating = false;
+        let audioPlayer;
+        let userTracks = [];
+        let isAdminLoggedIn = false;
+
+        // Default Playlist Data (Demo tracks)
+        const defaultPlaylist = [
+            {
+                title: "Cowboys and Sad Songs",
+                artist: "David van Coolwijk",
+                duration: "3:30",
+                durationSeconds: 210,
+                emoji: "🤠",
+                isDemo: true
+            },
+            {
+                title: "When the Prairie Calls Me Home",
+                artist: "David van Coolwijk", 
+                duration: "4:15",
+                durationSeconds: 255,
+                emoji: "🏔️",
+                isDemo: true
+            },
+            {
+                title: "Where the River Forgets My Name",
+                artist: "David van Coolwijk",
+                duration: "3:45", 
+                durationSeconds: 225,
+                emoji: "🏞️",
+                isDemo: true
+            },
+            {
+                title: "Dancing Through My Heart",
+                artist: "David van Coolwijk",
+                duration: "3:20",
+                durationSeconds: 200,
+                emoji: "💃",
+                isDemo: true
+            },
+            {
+                title: "A Cowboy's Life",
+                artist: "David van Coolwijk",
+                duration: "4:00",
+                durationSeconds: 240,
+                emoji: "🐎",
+                isDemo: true
+            },
+            {
+                title: "My Truck Left Me and Took My Dog",
+                artist: "David van Coolwijk",
+                duration: "3:10",
+                durationSeconds: 190,
+                emoji: "🚛",
+                isDemo: true
+            }
+        ];
+
+        let playlist = [...defaultPlaylist];
+
+        // Simple file upload function
+        function uploadFiles(files) {
+            console.log('📁 Upload started, files:', files.length);
+            
+            if (!files || files.length === 0) {
+                alert('❌ No files selected');
+                return;
+            }
+            
+            alert(`📁 Processing ${files.length} file(s)...`);
+            
+            Array.from(files).forEach((file, index) => {
+                console.log('Processing file:', file.name);
+                
+                if (!file.type.startsWith('audio/')) {
+                    alert(`⚠️ ${file.name} is not an audio file`);
+                    return;
+                }
+                
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    try {
+                        console.log('File read successfully:', file.name);
+                        
+                        // Create audio URL
+                        const blob = new Blob([e.target.result], { type: file.type });
+                        const audioUrl = URL.createObjectURL(blob);
+                        
+                        // Create track object
+                        const track = {
+                            title: file.name.replace(/\.[^/.]+$/, ""),
+                            artist: "David van Coolwijk",
+                            duration: "?:??",
+                            durationSeconds: 0,
+                            emoji: "🎸",
+                            audioUrl: audioUrl,
+                            fileName: file.name,
+                            isDemo: false
+                        };
+                        
+                        // Add to tracks
+                        userTracks.push(track);
+                        
+                        // Update playlist
+                        playlist = [...defaultPlaylist, ...userTracks];
+                        createPlaylist();
+                        
+                        console.log('Track added:', track.title);
+                        
+                        // Get duration
+                        const audio = new Audio(audioUrl);
+                        audio.addEventListener('loadedmetadata', () => {
+                            track.duration = formatTime(audio.duration);
+                            track.durationSeconds = Math.floor(audio.duration);
+                            createPlaylist();
+                            console.log('Duration updated:', track.duration);
+                        });
+                        
+                        if (index === files.length - 1) {
+                            alert(`✅ Successfully uploaded ${files.length} track(s)!`);
+                        }
+                        
+                    } catch (error) {
+                        console.error('Error processing file:', error);
+                        alert(`❌ Error processing ${file.name}`);
+                    }
+                };
+                
+                reader.onerror = function() {
+                    console.error('Error reading file:', file.name);
+                    alert(`❌ Error reading ${file.name}`);
+                };
+                
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        function createPlaylist() {
+            console.log('🎵 Creating playlist...');
+            
+            const playlistContainer = document.getElementById('playlist');
+            if (!playlistContainer) {
+                console.error('❌ Playlist container not found');
+                return;
+            }
+            
+            playlistContainer.innerHTML = '';
+            
+            console.log('📝 Playlist has', playlist.length, 'tracks');
+
+            playlist.forEach((track, index) => {
+                const playlistItem = document.createElement('div');
+                playlistItem.className = 'playlist-item';
+                playlistItem.style.cssText = `
+                    padding: 0.8rem;
+                    border-radius: 10px;
+                    margin-bottom: 0.5rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    border: 1px solid transparent;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    background: rgba(255, 255, 255, 0.03);
+                `;
+                
+                // Show different styling for demo vs real tracks
+                const trackStatus = track.isDemo ? '(YouTube Preview)' : track.audioUrl ? '' : '(Demo)';
+                const playIcon = index === currentTrack && isPlaying ? '🎵' : track.audioUrl ? '▶️' : '🎬';
+                
+                playlistItem.innerHTML = `
+                    <div style="font-size: 1.5rem;">${track.emoji}</div>
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="color: #ffa500; font-weight: bold; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${track.title}</div>
+                        <div style="color: #d4a574; font-size: 0.8rem;">${track.artist} • ${track.duration} ${trackStatus}</div>
+                    </div>
+                    <div style="color: #a0a0a0; font-size: 1rem;">${playIcon}</div>
+                `;
+
+                // Make active track stand out
+                if (index === currentTrack) {
+                    playlistItem.style.background = 'rgba(255, 165, 0, 0.2)';
+                    playlistItem.style.borderColor = 'rgba(255, 165, 0, 0.4)';
+                    if (isPlaying) {
+                        playlistItem.style.boxShadow = '0 0 20px rgba(255, 165, 0, 0.3)';
+                    }
+                }
+
+                // Add click handler with inline onclick
+                playlistItem.onclick = function() {
+                    console.log('🎵 Track clicked:', track.title);
+                    
+                    if (currentTrack !== index) {
+                        currentTrack = index;
+                        console.log('🔄 Loading track:', track.title);
+                        
+                        // Update display
+                        updatePlayerDisplay();
+                        createPlaylist();
+                        
+                        // Load audio if available
+                        if (track.audioUrl && audioPlayer) {
+                            audioPlayer.src = track.audioUrl;
+                            audioPlayer.load();
+                            console.log('🎶 Audio loaded');
+                        }
+                    } else {
+                        // Same track, toggle play/pause
+                        console.log('⏯️ Toggle play/pause');
+                        simpleTogglePlay();
+                    }
+                };
+
+                playlistContainer.appendChild(playlistItem);
+            });
+            
+            console.log('✅ Playlist created successfully');
+        }
+
+        // Simple play/pause toggle
+        function simpleTogglePlay() {
+            const track = playlist[currentTrack];
+            
+            if (!track.audioUrl) {
+                alert('🎬 This is a YouTube preview. Upload MP3 files for real audio!');
+                return;
+            }
+
+            if (!audioPlayer) {
+                console.error('❌ Audio player not found');
+                return;
+            }
+
+            if (isPlaying) {
+                audioPlayer.pause();
+                isPlaying = false;
+                console.log('⏸️ Paused');
+            } else {
+                audioPlayer.play().then(() => {
+                    isPlaying = true;
+                    console.log('▶️ Playing');
+                    showMiniPlayer();
+                }).catch(e => {
+                    console.error('❌ Play error:', e);
+                    alert('❌ Could not play audio');
+                });
+            }
+            
+            updatePlayerControls();
+            createPlaylist();
+        }
+
+        function updatePlayerDisplay() {
+            const track = playlist[currentTrack];
+            
+            const currentSong = document.getElementById('currentSong');
+            const currentArtist = document.getElementById('currentArtist');
+            const totalTime = document.getElementById('totalTime');
+            const albumArt = document.getElementById('albumArt');
+            
+            if (currentSong) currentSong.textContent = track.title;
+            if (currentArtist) currentArtist.textContent = track.artist;
+            if (totalTime) totalTime.textContent = track.duration;
+            
+            if (albumArt) {
+                albumArt.innerHTML = `
+                    <div style="position: absolute; inset: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent); transform: translateX(-100%); animation: vinylShine 3s ease-in-out infinite;"></div>
+                    ${track.emoji}
+                `;
+            }
+
+            // Update mini player
+            const miniSongTitle = document.getElementById('miniSongTitle');
+            const miniArtist = document.getElementById('miniArtist');
+            
+            if (miniSongTitle) miniSongTitle.textContent = track.title;
+            if (miniArtist) miniArtist.textContent = track.artist;
+        }
+
+        function updatePlayerControls() {
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const miniPlayPause = document.getElementById('miniPlayPause');
+            
+            const icon = isPlaying ? '⏸️' : '▶️';
+            
+            if (playPauseBtn) playPauseBtn.innerHTML = icon;
+            if (miniPlayPause) miniPlayPause.innerHTML = icon;
+        }
+
+        function formatTime(seconds) {
+            if (!seconds || isNaN(seconds)) return '0:00';
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function showMiniPlayer() {
+            const miniPlayer = document.getElementById('miniPlayer');
+            if (miniPlayer) {
+                miniPlayer.style.display = 'block';
+                setTimeout(() => {
+                    miniPlayer.style.transform = 'translateX(0)';
+                }, 100);
+            }
+        }
+
+        function hideMiniPlayer() {
+            const miniPlayer = document.getElementById('miniPlayer');
+            if (miniPlayer) {
+                miniPlayer.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    miniPlayer.style.display = 'none';
+                }, 300);
+            }
+        }
+
+        function initializeMusicPlayer() {
+            console.log('🎵 Initializing music player...');
+            
+            // Get audio player element
+            audioPlayer = document.getElementById('audioPlayer');
+            if (!audioPlayer) {
+                console.error('❌ Audio player element not found');
+                return;
+            }
+            
+            // Setup audio events
+            setupAudioEvents();
+            
+            // Create initial playlist
+            createPlaylist();
+            updatePlayerDisplay();
+            
+            console.log('✅ Music player initialized successfully');
+        }
+
+        function setupAudioEvents() {
+            if (!audioPlayer) return;
+            
+            audioPlayer.addEventListener('loadedmetadata', () => {
+                updatePlayerDisplay();
+            });
+
+            audioPlayer.addEventListener('timeupdate', () => {
+                // Update progress here if needed
+            });
+
+            audioPlayer.addEventListener('ended', () => {
+                if (isRepeating) {
+                    audioPlayer.currentTime = 0;
+                    audioPlayer.play();
+                } else {
+                    // Next track logic here
+                    console.log('🔄 Track ended');
+                    isPlaying = false;
+                    updatePlayerControls();
+                }
+            });
+
+            audioPlayer.addEventListener('error', (e) => {
+                console.error('Audio error:', e);
+                alert('❌ Error playing audio file');
+            });
+        }
+
+        // Initialize everything on page load
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎸 Initializing David\'s website...');
+            
             // Set a random quote on page load
             getNewWisdom();
             
             // Initialize review system
             initializeStarRating();
             setupReviewForm();
+            
+            // Initialize music player
+            initializeMusicPlayer();
+            
+            console.log('✅ Website initialization complete!');
         });
     </script>
 </body>
