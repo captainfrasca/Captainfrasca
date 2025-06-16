@@ -925,8 +925,8 @@
         
         <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, #ffa500, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem; position: relative; z-index: 2; text-align: center;">🎸 David's Music Player 🎵</h2>
         
-        <!-- Upload Section for David's Music -->
-        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 165, 0, 0.2); position: relative; z-index: 2; text-align: center;">
+        <!-- Upload Section for David's Music (Admin Only) -->
+        <div id="adminUploadSection" style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 165, 0, 0.2); position: relative; z-index: 2; text-align: center; display: none;">
             <h3 style="color: #ffa500; margin-bottom: 1rem; font-size: 1.3rem;">🎼 Add Your Latest Tracks 🎼</h3>
             <p style="color: #d4a574; margin-bottom: 1.5rem;">Upload your MP3 recordings to share with fans!</p>
             
@@ -939,9 +939,29 @@
                 <button id="clearCustomTracks" style="background: rgba(255, 255, 255, 0.1); color: #ffa500; border: 1px solid rgba(255, 165, 0, 0.3); padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">
                     🗑️ Remove Added Songs
                 </button>
+                
+                <button id="logoutAdmin" style="background: rgba(255, 255, 255, 0.1); color: #ff6b6b; border: 1px solid rgba(255, 107, 107, 0.3); padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">
+                    🚪 Logout
+                </button>
             </div>
             
             <div id="uploadStatus" style="margin-top: 1rem; color: #a0a0a0; font-size: 0.9rem; min-height: 20px;"></div>
+        </div>
+
+        <!-- Admin Login Section -->
+        <div id="adminLoginSection" style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255, 165, 0, 0.2); position: relative; z-index: 2; text-align: center;">
+            <h3 style="color: #ffa500; margin-bottom: 1rem; font-size: 1.3rem;">🔐 Artist Login 🔐</h3>
+            <p style="color: #d4a574; margin-bottom: 1.5rem;">Enter the admin password to upload new tracks</p>
+            
+            <div style="max-width: 300px; margin: 0 auto;">
+                <input type="password" id="adminPassword" placeholder="Enter admin password" style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem; margin-bottom: 1rem; text-align: center;">
+                
+                <button id="adminLogin" style="background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; border: none; width: 100%;">
+                    🎸 Login as David
+                </button>
+            </div>
+            
+            <div id="loginStatus" style="margin-top: 1rem; color: #a0a0a0; font-size: 0.9rem; min-height: 20px;"></div>
         </div>
 
         <!-- Music Player Interface -->
