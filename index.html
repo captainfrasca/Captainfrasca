@@ -817,36 +817,97 @@
         <button onclick="getNewWisdom()" style="margin-top: 2rem; padding: 12px 25px; background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; position: relative; z-index: 2;">Get New Wisdom ✨</button>
     </div>
     
-    <!-- Testimonials Section -->
+    <!-- Fan Reviews Section with Interactive Form -->
     <div style="background: rgba(255, 165, 0, 0.05); margin: 4rem auto; padding: 4rem 2rem; border-radius: 30px; border: 1px solid rgba(255, 165, 0, 0.1); max-width: 1200px;" id="testimonials">
-        <h2 style="font-size: 3rem !important; text-align: center !important; margin: 0 auto 3rem auto !important; background: linear-gradient(45deg, #ffa500, #ffd700) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; width: 100% !important; display: block !important; text-align: center !important;">What Fans Are Saying</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease;">
+        <h2 style="font-size: 3rem !important; text-align: center !important; margin: 0 auto 3rem auto !important; background: linear-gradient(45deg, #ffa500, #ffd700) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; width: 100% !important; display: block !important; text-align: center !important;">🎵 Fan Reviews 🎵</h2>
+        
+        <!-- Add Review Form -->
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 25px; padding: 3rem 2rem; margin-bottom: 4rem; border: 1px solid rgba(255, 165, 0, 0.2); max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 4rem;">
+            <h3 style="color: #ffa500; text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">🤠 Share Your Review!</h3>
+            <form id="reviewForm">
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Your Name:</label>
+                    <input type="text" id="reviewerName" required style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem;" placeholder="Enter your name">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Location (optional):</label>
+                    <input type="text" id="reviewerLocation" style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem;" placeholder="e.g. Nashville, TN">
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Star Rating:</label>
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <div id="starRating" style="font-size: 2rem; cursor: pointer;">
+                            <span class="star" data-rating="1" style="color: #666; transition: color 0.2s;">★</span>
+                            <span class="star" data-rating="2" style="color: #666; transition: color 0.2s;">★</span>
+                            <span class="star" data-rating="3" style="color: #666; transition: color 0.2s;">★</span>
+                            <span class="star" data-rating="4" style="color: #666; transition: color 0.2s;">★</span>
+                            <span class="star" data-rating="5" style="color: #666; transition: color 0.2s;">★</span>
+                        </div>
+                        <div id="ratingText" style="color: #a0a0a0; margin-top: 0.5rem;">Click stars to rate!</div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <label style="color: #d4a574; font-weight: bold; display: block; margin-bottom: 0.5rem;">Your Review:</label>
+                    <textarea id="reviewText" required rows="4" style="width: 100%; padding: 12px; border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; background: rgba(255, 255, 255, 0.1); color: #f5f3f0; font-size: 1rem; resize: vertical;" placeholder="Share what you love about David's music..."></textarea>
+                </div>
+                
+                <button type="submit" style="width: 100%; padding: 15px; background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; border: none; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                    🎸 Submit Review ✨
+                </button>
+            </form>
+        </div>
+
+        <!-- Reviews Display -->
+        <div id="reviewsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <!-- Default Reviews -->
+            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
                 <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
                 <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"David's music takes me straight back to the prairie. His storytelling is authentic and his voice has that raw, honest quality that country music needs."</p>
                 <div style="color: #ffa500; font-weight: bold;">Sarah Mitchell</div>
                 <div style="color: #a0a0a0; font-size: 0.9rem;">Nashville, TN</div>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease;">
+            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
                 <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
                 <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"'Cowboys and Sad Songs' is pure poetry. David captures the heart of country music while bringing something fresh to the genre. Absolutely incredible!"</p>
                 <div style="color: #ffa500; font-weight: bold;">Jake Thompson</div>
                 <div style="color: #a0a0a0; font-size: 0.9rem;">Austin, TX</div>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease;">
+            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
                 <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
                 <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"The blend of traditional songwriting with modern technology is genius. David's music feels both timeless and innovative. Can't stop listening!"</p>
                 <div style="color: #ffa500; font-weight: bold;">Emma Rodriguez</div>
                 <div style="color: #a0a0a0; font-size: 0.9rem;">Denver, CO</div>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease;">
+            <div class="review-card" style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1); text-align: center; transition: all 0.3s ease; transform: scale(1); opacity: 1;">
                 <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
                 <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"'Where the River Forgets My Name' moved me to tears. David has a gift for capturing life's most profound moments in his music."</p>
                 <div style="color: #ffa500; font-weight: bold;">Michael O'Brien</div>
                 <div style="color: #a0a0a0; font-size: 0.9rem;">Chicago, IL</div>
+            </div>
+        </div>
+        
+        <!-- Review Stats -->
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.03); border-radius: 20px; border: 1px solid rgba(255, 165, 0, 0.1);">
+            <h4 style="color: #ffa500; margin-bottom: 1rem; font-size: 1.3rem;">📊 Review Statistics</h4>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div id="totalReviews" style="font-size: 2rem; color: #ffd700; font-weight: bold;">4</div>
+                    <div style="color: #d4a574;">Total Reviews</div>
+                </div>
+                <div style="text-align: center;">
+                    <div id="averageRating" style="font-size: 2rem; color: #ffd700; font-weight: bold;">5.0</div>
+                    <div style="color: #d4a574;">Average Rating</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: #ffd700;">★★★★★</div>
+                    <div style="color: #d4a574;">Fan Favorite</div>
+                </div>
             </div>
         </div>
     </div>
@@ -983,10 +1044,235 @@
             }, 200);
         }
 
+        // Review System Variables
+        let currentRating = 0;
+        let userReviews = [];
+
+        // Star Rating System
+        function initializeStarRating() {
+            const stars = document.querySelectorAll('.star');
+            const ratingText = document.getElementById('ratingText');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', () => {
+                    highlightStars(index + 1);
+                    updateRatingText(index + 1, true);
+                });
+                
+                star.addEventListener('mouseout', () => {
+                    highlightStars(currentRating);
+                    updateRatingText(currentRating, false);
+                });
+                
+                star.addEventListener('click', () => {
+                    currentRating = index + 1;
+                    highlightStars(currentRating);
+                    updateRatingText(currentRating, false);
+                });
+            });
+        }
+
+        function highlightStars(rating) {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.style.color = '#ffd700';
+                    star.style.textShadow = '0 0 10px rgba(255, 215, 0, 0.8)';
+                } else {
+                    star.style.color = '#666';
+                    star.style.textShadow = 'none';
+                }
+            });
+        }
+
+        function updateRatingText(rating, isHover) {
+            const ratingText = document.getElementById('ratingText');
+            const messages = {
+                1: isHover ? "⭐ Poor" : currentRating === 1 ? "⭐ Poor (Selected)" : "Click stars to rate!",
+                2: isHover ? "⭐⭐ Fair" : currentRating === 2 ? "⭐⭐ Fair (Selected)" : "Click stars to rate!",
+                3: isHover ? "⭐⭐⭐ Good" : currentRating === 3 ? "⭐⭐⭐ Good (Selected)" : "Click stars to rate!",
+                4: isHover ? "⭐⭐⭐⭐ Very Good" : currentRating === 4 ? "⭐⭐⭐⭐ Very Good (Selected)" : "Click stars to rate!",
+                5: isHover ? "⭐⭐⭐⭐⭐ Excellent" : currentRating === 5 ? "⭐⭐⭐⭐⭐ Excellent (Selected)" : "Click stars to rate!"
+            };
+            
+            ratingText.textContent = rating > 0 ? messages[rating] : "Click stars to rate!";
+            ratingText.style.color = rating > 0 ? '#ffa500' : '#a0a0a0';
+        }
+
+        // Review Form Submission
+        function setupReviewForm() {
+            const form = document.getElementById('reviewForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('reviewerName').value.trim();
+                const location = document.getElementById('reviewerLocation').value.trim();
+                const reviewText = document.getElementById('reviewText').value.trim();
+                
+                if (!name || !reviewText || currentRating === 0) {
+                    alert('🤠 Hold on there, partner! Please fill in your name, rating, and review before submitting.');
+                    return;
+                }
+                
+                const newReview = {
+                    name: name,
+                    location: location || 'Country Music Fan',
+                    rating: currentRating,
+                    text: reviewText,
+                    date: new Date()
+                };
+                
+                addNewReview(newReview);
+                resetForm();
+                
+                // Show success message
+                showSuccessMessage();
+            });
+        }
+
+        function addNewReview(review) {
+            userReviews.push(review);
+            
+            const reviewsContainer = document.getElementById('reviewsContainer');
+            const reviewCard = createReviewCard(review, true);
+            
+            // Add the new review at the beginning
+            reviewsContainer.insertBefore(reviewCard, reviewsContainer.firstChild);
+            
+            // Update statistics
+            updateReviewStats();
+        }
+
+        function createReviewCard(review, isNew = false) {
+            const reviewCard = document.createElement('div');
+            reviewCard.className = 'review-card';
+            reviewCard.style.cssText = `
+                background: rgba(255, 255, 255, 0.03); 
+                padding: 2rem; 
+                border-radius: 20px; 
+                border: 1px solid rgba(255, 165, 0, 0.1); 
+                text-align: center; 
+                transition: all 0.3s ease; 
+                transform: ${isNew ? 'scale(0.8)' : 'scale(1)'}; 
+                opacity: ${isNew ? '0' : '1'};
+                ${isNew ? 'border-color: rgba(255, 165, 0, 0.4); box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);' : ''}
+            `;
+            
+            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+            
+            reviewCard.innerHTML = `
+                <div style="color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem;">${stars}</div>
+                <p style="font-style: italic; color: #d4a574; margin-bottom: 1rem; line-height: 1.6;">"${review.text}"</p>
+                <div style="color: #ffa500; font-weight: bold;">${review.name}</div>
+                <div style="color: #a0a0a0; font-size: 0.9rem;">${review.location}</div>
+                ${isNew ? '<div style="background: linear-gradient(45deg, #ffa500, #ff8c00); color: #000; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; margin-top: 1rem; display: inline-block;">🆕 NEW REVIEW</div>' : ''}
+            `;
+            
+            if (isNew) {
+                setTimeout(() => {
+                    reviewCard.style.transform = 'scale(1)';
+                    reviewCard.style.opacity = '1';
+                }, 100);
+                
+                setTimeout(() => {
+                    reviewCard.style.borderColor = 'rgba(255, 165, 0, 0.1)';
+                    reviewCard.style.boxShadow = 'none';
+                    const newBadge = reviewCard.querySelector('div:last-child');
+                    if (newBadge && newBadge.textContent.includes('NEW')) {
+                        newBadge.style.opacity = '0';
+                        setTimeout(() => newBadge.remove(), 300);
+                    }
+                }, 3000);
+            }
+            
+            return reviewCard;
+        }
+
+        function updateReviewStats() {
+            const totalReviewsElement = document.getElementById('totalReviews');
+            const averageRatingElement = document.getElementById('averageRating');
+            
+            const totalReviews = 4 + userReviews.length; // 4 default reviews + user reviews
+            let totalRating = 20; // 4 default 5-star reviews
+            
+            userReviews.forEach(review => {
+                totalRating += review.rating;
+            });
+            
+            const averageRating = (totalRating / totalReviews).toFixed(1);
+            
+            totalReviewsElement.textContent = totalReviews;
+            averageRatingElement.textContent = averageRating;
+            
+            // Add a little animation
+            totalReviewsElement.style.transform = 'scale(1.2)';
+            averageRatingElement.style.transform = 'scale(1.2)';
+            
+            setTimeout(() => {
+                totalReviewsElement.style.transform = 'scale(1)';
+                averageRatingElement.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        function resetForm() {
+            document.getElementById('reviewForm').reset();
+            currentRating = 0;
+            highlightStars(0);
+            updateRatingText(0, false);
+        }
+
+        function showSuccessMessage() {
+            const successMessage = document.createElement('div');
+            successMessage.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(45deg, #ffa500, #ff8c00);
+                color: #000;
+                padding: 2rem 3rem;
+                border-radius: 20px;
+                font-weight: bold;
+                font-size: 1.2rem;
+                z-index: 10000;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+                text-align: center;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+                transition: all 0.3s ease;
+            `;
+            
+            successMessage.innerHTML = `
+                🎉 <strong>Thanks for your review!</strong> 🎉<br>
+                <span style="font-size: 1rem; opacity: 0.8;">Your review has been added to the wall of fame!</span>
+            `;
+            
+            document.body.appendChild(successMessage);
+            
+            setTimeout(() => {
+                successMessage.style.opacity = '1';
+                successMessage.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 100);
+            
+            setTimeout(() => {
+                successMessage.style.opacity = '0';
+                successMessage.style.transform = 'translate(-50%, -50%) scale(0.8)';
+                setTimeout(() => {
+                    if (successMessage.parentNode) {
+                        successMessage.parentNode.removeChild(successMessage);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
         // Initialize daily wisdom on page load
         document.addEventListener('DOMContentLoaded', function() {
             // Set a random quote on page load
             getNewWisdom();
+            
+            // Initialize review system
+            initializeStarRating();
+            setupReviewForm();
         });
     </script>
 </body>
