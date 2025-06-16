@@ -119,8 +119,13 @@
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.youtube.com">
     <link rel="preconnect" href="https://open.spotify.com">
+    
+    <!-- Country/Western Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rye:wght@400&family=Butcherman&family=Faster+One&family=Nosifer&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -667,8 +672,19 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Video Background -->
     <section class="hero" id="hero" role="main">
+        <!-- Video Background -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="hero-video.mp4" type="video/mp4">
+                <source src="hero-video.webm" type="video/webm">
+                <!-- Fallback image for browsers that don't support video -->
+            </video>
+            <!-- Dark overlay for text readability -->
+            <div class="video-overlay"></div>
+        </div>
+        
         <div class="hero-content">
             <h1>Authentic Country Stories</h1>
             <p class="hero-subtitle">Original Songs • AI Performance • Pure Heart</p>
@@ -864,7 +880,76 @@
         </div>
     </section>
 
+    <!-- AI Chat Section -->
+    <section class="section" id="chat" role="region" aria-labelledby="chat-heading">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
+            <h2 id="chat-heading">Chat with Country AI</h2>
+            <div class="chat-container" style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(255, 165, 0, 0.05)); border-radius: 20px; padding: 2rem; border: 2px solid rgba(255, 165, 0, 0.2);">
+                <div class="chat-header" style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤖🤠</div>
+                    <h3 style="font-family: var(--western-elegant); color: #ffa500; margin-bottom: 0.5rem;">Ask me about David's music!</h3>
+                    <p style="color: #d4a574; font-style: italic;">I know all about country music, David's songs, and the stories behind them.</p>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages" style="height: 300px; overflow-y: auto; background: rgba(0, 0, 0, 0.3); border-radius: 15px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(255, 165, 0, 0.1);">
+                    <div class="message bot-message" style="margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(45deg, #8b4513, #ffa500); padding: 1rem; border-radius: 15px 15px 15px 5px; color: white; font-family: var(--western-readable);">
+                            <strong>🤠 Country AI:</strong> Howdy, partner! I'm here to chat about David van Coolwijk's country music. Ask me about his songs, the stories behind them, or anything country music related!
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container" style="display: flex; gap: 1rem;">
+                    <input type="text" id="chatInput" placeholder="Ask about David's music..." style="flex: 1; padding: 1rem; border-radius: 25px; border: 2px solid rgba(255, 165, 0, 0.3); background: rgba(0, 0, 0, 0.5); color: #d4a574; font-family: var(--western-readable); outline: none;">
+                    <button id="chatSend" style="padding: 1rem 2rem; background: linear-gradient(45deg, #ffa500, #ff8c00); border: none; border-radius: 25px; color: white; font-weight: bold; cursor: pointer; font-family: var(--western-elegant); transition: all 0.3s ease;">Send</button>
+                </div>
+                
+                <div class="quick-questions" style="margin-top: 1.5rem;">
+                    <p style="color: #ffa500; font-weight: bold; margin-bottom: 1rem; font-family: var(--western-elegant);">Quick Questions:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
+                        <button class="quick-btn" data-question="What's your favorite David song?" style="padding: 0.8rem; background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; color: #d4a574; cursor: pointer; transition: all 0.3s ease; font-family: var(--western-readable);">Favorite song?</button>
+                        <button class="quick-btn" data-question="Tell me about Cowboys and Sad Songs" style="padding: 0.8rem; background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; color: #d4a574; cursor: pointer; transition: all 0.3s ease; font-family: var(--western-readable);">Cowboys & Sad Songs?</button>
+                        <button class="quick-btn" data-question="How does David use AI in music?" style="padding: 0.8rem; background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; color: #d4a574; cursor: pointer; transition: all 0.3s ease; font-family: var(--western-readable);">AI in music?</button>
+                        <button class="quick-btn" data-question="What makes country music special?" style="padding: 0.8rem; background: rgba(255, 165, 0, 0.1); border: 1px solid rgba(255, 165, 0, 0.3); border-radius: 10px; color: #d4a574; cursor: pointer; transition: all 0.3s ease; font-family: var(--western-readable);">Country music?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
+    <section class="section" id="contact" role="region" aria-labelledby="contact-heading">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center;">
+            <h2 id="contact-heading">Get in Touch</h2>
+            <p style="color: #d4a574; font-size: 1.2rem; margin-bottom: 3rem; font-family: var(--western-readable);">Ready to bring some country soul to your next event? Let's make some music!</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(255, 165, 0, 0.05)); padding: 2rem; border-radius: 15px; border: 2px solid rgba(255, 165, 0, 0.2);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📧</div>
+                    <h3 style="color: #ffa500; margin-bottom: 1rem; font-family: var(--western-elegant);">Email</h3>
+                    <p style="color: #d4a574;">david@captainfrasca.music</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(255, 165, 0, 0.05)); padding: 2rem; border-radius: 15px; border: 2px solid rgba(255, 165, 0, 0.2);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎸</div>
+                    <h3 style="color: #ffa500; margin-bottom: 1rem; font-family: var(--western-elegant);">Bookings</h3>
+                    <p style="color: #d4a574;">Available for private events, festivals, and virtual performances</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(255, 165, 0, 0.05)); padding: 2rem; border-radius: 15px; border: 2px solid rgba(255, 165, 0, 0.2);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌍</div>
+                    <h3 style="color: #ffa500; margin-bottom: 1rem; font-family: var(--western-elegant);">Location</h3>
+                    <p style="color: #d4a574;">Based in the Netherlands, performing worldwide</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <a href="mailto:david@captainfrasca.music" class="btn btn-primary" style="margin: 0.5rem;">Send Message</a>
+                <a href="https://open.spotify.com/artist/davidvancoolwijk" class="btn btn-secondary" style="margin: 0.5rem;">Spotify</a>
+                <a href="https://youtube.com/@captainfrasca" class="btn btn-secondary" style="margin: 0.5rem;">YouTube</a>
+            </div>
+        </div>
+    </section>
     <section class="section contact" id="contact">
         <h2>Get In Touch</h2>
         <p>Connect with me and stay updated on new releases, performances, and behind-the-scenes content.</p>
