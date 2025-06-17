@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#FF6B35">
     
     <!-- Primary SEO Tags -->
     <title>David van Coolwijk - Country Music Artist | Original Songs & AI Performance</title>
@@ -795,6 +796,48 @@
             color: var(--primary-orange);
         }
 
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            z-index: 1002;
+            transition: all 0.3s ease;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(255, 107, 53, 0.2);
+            border-color: var(--primary-orange);
+            transform: scale(1.1);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .nav-container {
@@ -803,6 +846,12 @@
             
             .nav-links {
                 gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .music-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
             }
             
             .about-content {
@@ -819,53 +868,154 @@
         }
 
         @media (max-width: 768px) {
+            /* Mobile Navigation */
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
             .nav-content {
-                flex-direction: column;
-                gap: 1rem;
+                position: relative;
             }
             
             .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: calc(100vh - 80px);
+                background: var(--dark-bg);
+                backdrop-filter: blur(20px);
+                border-left: 1px solid var(--glass-border);
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0;
+                padding: 2rem 0;
+                transition: right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+                overflow-y: auto;
+                z-index: 1001;
+            }
+            
+            .nav-links.active {
+                right: 0;
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-link {
                 width: 100%;
-                text-align: center;
+                padding: 1rem 2rem;
+                text-align: left;
+                border-radius: 0;
+                font-size: 1.1rem;
+            }
+            
+            .nav-link:hover {
+                background: rgba(255, 107, 53, 0.1);
+            }
+            
+            /* Hero Adjustments */
+            .hero {
+                min-height: 100vh;
+                padding: 5rem 0 2rem;
+            }
+            
+            .hero-bg-element {
+                font-size: 15rem;
             }
             
             .hero-content {
                 margin: 0 1rem;
-                padding: 2rem;
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+            
+            .hero-title {
+                font-size: clamp(2rem, 7vw, 3rem);
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
             }
             
             .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+                gap: 1rem;
             }
             
+            .btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+                min-width: 160px;
+            }
+            
+            /* Music Section */
             .music-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
+                margin-top: 2rem;
             }
             
             .music-card {
-                padding: 2rem;
+                padding: 1.5rem;
+                border-radius: 20px;
             }
             
+            .music-card-title {
+                font-size: 1.3rem;
+            }
+            
+            .music-card-description {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .video-container {
+                height: 200px;
+            }
+            
+            /* Section Adjustments */
             .section {
                 padding: 4rem 1rem;
             }
             
+            .section-title {
+                font-size: clamp(2rem, 6vw, 3rem);
+                margin-bottom: 3rem;
+            }
+            
+            /* Player Adjustments */
+            .music-player-section {
+                margin: 3rem 0.5rem;
+                padding: 2rem 1rem;
+                border-radius: 24px;
+            }
+            
             .player-interface {
-                padding: 2rem;
+                padding: 1.5rem;
+                border-radius: 20px;
             }
             
             .album-art {
-                width: 200px;
-                height: 200px;
-                font-size: 4rem;
+                width: 180px;
+                height: 180px;
+                font-size: 3.5rem;
+            }
+            
+            .track-title {
+                font-size: 1.5rem;
+            }
+            
+            .track-artist {
+                font-size: 1.1rem;
             }
             
             .player-controls {
                 gap: 1rem;
+                margin-bottom: 2rem;
             }
             
             .control-btn {
@@ -880,21 +1030,184 @@
                 font-size: 1.8rem;
             }
             
+            /* Contact Section */
+            .contact-section {
+                margin: 3rem 0.5rem;
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+            
             .contact-links {
-                flex-direction: column;
-                align-items: center;
+                gap: 1rem;
+            }
+            
+            .contact-link {
+                width: 100%;
+                max-width: 300px;
+                padding: 1rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            /* About Section */
+            .about-image {
+                width: 280px;
+                height: 280px;
+                font-size: 6rem;
+            }
+            
+            .about-text {
+                font-size: 1rem;
+            }
+            
+            /* Footer Adjustments */
+            footer {
+                padding: 2rem 1rem 1.5rem;
+            }
+            
+            footer > div > div:first-child {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            /* Table Responsive */
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 0.75rem 0.5rem !important;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2.5rem;
+            /* Navigation */
+            .nav-glass {
+                margin: 0.5rem auto;
+                padding: 0.75rem 1rem;
+                border-radius: 20px;
             }
             
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            /* Hero */
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .hero-description {
+                font-size: 0.95rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            /* Music Cards */
+            .music-card {
+                padding: 1.25rem;
+            }
+            
+            .music-card-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .video-container {
+                height: 180px;
+            }
+            
+            /* Player */
+            .album-art {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .track-title {
+                font-size: 1.3rem;
+            }
+            
+            .control-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            /* About */
             .about-image {
-                width: 250px;
-                height: 250px;
-                font-size: 6rem;
+                width: 220px;
+                height: 220px;
+                font-size: 5rem;
+            }
+            
+            /* Sections */
+            .section {
+                padding: 3rem 0.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            /* Contact */
+            .contact-section {
+                padding: 2rem 1rem;
+            }
+            
+            /* Reduce animations on mobile for performance */
+            .particle {
+                display: none;
+            }
+            
+            .background-gradient {
+                animation: none;
+            }
+            
+            .hero-bg-element {
+                animation: none;
+                opacity: 0.02;
+            }
+        }
+
+        /* Touch-friendly adjustments */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-link,
+            .btn,
+            .contact-link,
+            .control-btn {
+                transition: none;
+            }
+            
+            .nav-link:active,
+            .btn:active,
+            .contact-link:active,
+            .control-btn:active {
+                transform: scale(0.95);
             }
         }
 
@@ -966,18 +1279,24 @@
                 <div class="logo">
                     🤠 <span>David van Coolwijk</span>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#hero" class="nav-link"><span>Home</span></a></li>
-                    <li><a href="#music" class="nav-link"><span>Songs</span></a></li>
-                    <li><a href="#songwriting" class="nav-link"><span>Songwriting</span></a></li>
-                    <li><a href="#player" class="nav-link"><span>Player</span></a></li>
-                    <li><a href="#about" class="nav-link"><span>About</span></a></li>
-                    <li><a href="#licensing" class="nav-link"><span>Licensing</span></a></li>
-                    <li><a href="#contact" class="nav-link"><span>Contact</span></a></li>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span id="menuIcon">☰</span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#hero" class="nav-link" onclick="closeMobileMenu()"><span>Home</span></a></li>
+                    <li><a href="#music" class="nav-link" onclick="closeMobileMenu()"><span>Songs</span></a></li>
+                    <li><a href="#songwriting" class="nav-link" onclick="closeMobileMenu()"><span>Songwriting</span></a></li>
+                    <li><a href="#player" class="nav-link" onclick="closeMobileMenu()"><span>Player</span></a></li>
+                    <li><a href="#about" class="nav-link" onclick="closeMobileMenu()"><span>About</span></a></li>
+                    <li><a href="#licensing" class="nav-link" onclick="closeMobileMenu()"><span>Licensing</span></a></li>
+                    <li><a href="#contact" class="nav-link" onclick="closeMobileMenu()"><span>Contact</span></a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="closeMobileMenu()"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -1015,7 +1334,7 @@
                     <iframe width="100%" height="240" src="https://www.youtube.com/embed/H44Wis5Vd3o" 
                             title="Cowboys and Sad Songs" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
+                            allowfullscreen loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -1501,6 +1820,42 @@
     </footer>
 
     <script>
+        // ===== MOBILE MENU FUNCTIONALITY =====
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuIcon = document.getElementById('menuIcon');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                menuIcon.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.textContent = '☰';
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuIcon = document.getElementById('menuIcon');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            menuIcon.textContent = '☰';
+            document.body.style.overflow = '';
+        }
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
         // ===== ADVANCED PARTICLE SYSTEM =====
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
